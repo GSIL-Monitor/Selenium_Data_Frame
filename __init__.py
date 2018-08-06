@@ -14,7 +14,7 @@ Log日志
 	Log.py 日志类。设置日志类，其他模块或文件需要日志类时调用该文件
 
 Public公共文件库
-	Common 封装的公共方法，操作excel
+	common 封装的公共方法，操作excel
 		Commonconfig.py 公共的参数配置，调试过程中的测试数据等
 		DoExcel.py 操作excel（数据驱动）
 		Send_email.py 发送邮件（附件）
