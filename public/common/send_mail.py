@@ -15,23 +15,6 @@ __mtime__ = '2018/8/6'
                 ┗┓┓┏━┳┓┏┛
                   ┃┫┫  ┃┫┫
                   ┗┻┛  ┗┻┛
-""""""
-__author__ = 'LZL'
-__mtime__ = '2018/7/31'
-# code is far away from bugs with the god animal protecting
-    I love animals. They taste delicious.
-              ┏┓      ┏┓
-            ┏┛┻━━━┛┻┓
-            ┃      ☃      ┃
-            ┃  ┳┛  ┗┳  ┃
-            ┃      ┻      ┃
-            ┗━┓      ┏━┛
-                ┃      ┗━━━┓
-                ┃  神兽保佑    ┣┓
-                ┃　永无BUG！   ┏┛
-                ┗┓┓┏━┳┓┏┛
-                  ┃┫┫  ┃┫┫
-                  ┗┻┛  ┗┻┛
 """
 
 # 导入smtplib发送邮件模块，发送和接收都是由smtplib.SMTP方法来完成的
@@ -44,9 +27,9 @@ from email.header import Header
 
 import os
 # 通过ini文件获取发送邮件所需的参数值
-from public.common import operation_ini
+from public.common.operation_ini import OperationIni
 
-class PlainEmail:
+class SendMail:
     ''' 发送带有附件的邮件 '''
 
     def get_email_obj(self, email_sub, email_from, email_to_list):
@@ -139,36 +122,52 @@ class PlainEmail:
         new_report = os.path.join(report_path + '\\' + reports[-1])
         return new_report
 
+    def __send_config(self):
+        '''
+        读取email.ini文件中的邮件属性值发送邮件
+        附件为report文件夹下最新的文件
+        若有想更改的，直接更改ini文件
+        :return: null
+        '''
 
-    def send_mail(self):
-        pass
+        # base_path = os.path.dirname(os.path.realpath(__file__))
+        # 拼接路径，读取ini文件中发送邮件所需要的参数值
+        base_path = os.path.dirname(os.getcwd()).split('\\public')[0]
+        ini_path = os.path.join(base_path, 'parameter', 'email.ini')
+        report_path = os.path.join(base_path, 'report', 'html')
+
+        ini = OperationIni(ini_path)
+        email_host = ini.get_value('server', 'email_host')
+        host_port = ini.get_value('server', 'host_port')
+        from_addr = ini.get_value('server', 'from_Addr')
+        pwd = ini.get_value('server', 'pwd')
+        email_from = ini.get_value('content', 'email_from')
+        to_addr_list = ini.get_value('content', 'to_addr_list')
+        email_content = ini.get_value('content', 'email_content')
+        email_subject = ini.get_value('content', 'email_subject')
+        part_name = ini.get_value('content', 'part_name')
+        # report文件夹下最新的一个文件为附件
+        Email = SendMail()
+        adjunct_path = Email.get_new_report(report_path)
+
+        # 调用本类方法，发送邮件
+        email_obj = Email.get_email_obj(email_subject, email_from, to_addr_list)
+        #  正文若是文本则不需要传参content_type
+        Email.attach_content(email_obj, email_content)
+        Email.attach_adjunct(email_obj, adjunct_path, part_name)
+        print(to_addr_list, type(to_addr_list))
+        Email.send_mail(email_obj, email_host, host_port, from_addr, pwd, to_addr_list.split(','))
 
 
-# # from PDDemo.run_one_report import RunTest
-#
-# if __name__ == "__main__":
-#
-#     #先执行下测试用例
-#     # RunTest().do_report()
-#
-#     Email = PlainEmail()
-#
-#     email_host = 'imap.exmail.qq.com'
-#     host_port = 465
-#     from_addr = 'zonglin_lin@mrxdtech.com'
-#     pwd = 'MRXDlzl123'
-#     to_addr_list = ["249837922@qq.com"]
-#     email_subject = "UI自动化测试报告"
-#     email_from = 'LZL'
-#
-#     email_content = "UI自动化测试报告结果，请查收附件"
-#     report_path = os.path.join(os.path.dirname(os.getcwd()), 'Report', 'html')
-#     adjunct_path = Email.get_new_report(report_path)
-#     # 注意：文件名称不能有中文，否则附件会出错
-#     part_name = 'UI_result.html'
-#
-#     email_obj = Email.get_email_obj(email_subject, email_from, to_addr_list)
-#     Email.attach_content(email_obj, email_content)
-#     Email.attach_adjunct(email_obj, adjunct_path, part_name)
-#     Email.send_mail(email_obj, email_host, host_port, from_addr, pwd, to_addr_list)
+    def send_email(self):
+        '''
+        调用私有方法进行邮件发送，可更改email.ini文件进行相关修改
+        :return: null
+        '''
+        self.__send_config()
+
+
+if __name__ == "__main__":
+    SendMail().send_email()
+
 

@@ -18,6 +18,7 @@ __mtime__ = '2018/8/6'
 """
 
 from configparser import ConfigParser
+import os
 
 class OperationIni(object):
     ''' 读取ini文件内容 '''
@@ -28,7 +29,9 @@ class OperationIni(object):
         @param ini_path: ini文件绝对路径
         '''
         self.cp = ConfigParser()
-        self.cp.read(ini_path)
+        # ini文件中若有中文，则会自动转成gbk，读取会读取不了或乱码，所以这里需要注意设置编码
+        self.cp.read(ini_path, encoding="utf-8")
+        # self.cp.read(ini_path, encoding="utf-8-sig")
 
     def get_sections(self):
         '''
@@ -61,4 +64,3 @@ class OperationIni(object):
         @return: 参数value，返回string
         '''
         return self.cp.get(section, option)
-

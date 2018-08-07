@@ -87,18 +87,11 @@ class BasicPage(object):
         '''
         return current_url in self.driver.current_url
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    def is_display(self, id):
+        '''
+        元素的属性是否可见
+        :param id: 元素id
+        :return: null
+        '''
+        js = 'document,getElementByid(list[id]).style.display = "block" '
+        self.driver.execute_script(js)
