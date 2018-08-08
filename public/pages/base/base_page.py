@@ -48,7 +48,6 @@ class BasicPage(object):
         WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(args))
         return self.driver.find_element(args[0], args[1])
 
-
     def do_js(self, js):
         '''
         执行js
@@ -56,7 +55,6 @@ class BasicPage(object):
         :return: null
         '''
         self.driver.execute_script(js)
-
 
     def input_value(self, args, value, is_clear=True):
         '''
@@ -71,7 +69,7 @@ class BasicPage(object):
             input.clear()
         input.send_keys(value)
 
-    def is_pagetitle(self, pagetitle):
+    def is_page_title(self, pagetitle):
         '''
         判断页面标题是否包含某字段
         @param pagetitile: 需判断的字段
