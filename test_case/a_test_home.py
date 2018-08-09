@@ -48,6 +48,7 @@ class HomeTest(unittest.TestCase):
         cls.register = (By.CSS_SELECTOR, 'div.text > a:nth-child(1)')
         cls.login = (By.CSS_SELECTOR, 'div.text > a:nth-child(2)')
 
+    # BeautifulReport的装饰器，失败截图、保存、添加到报告中；图片名称需和方法名一致
     @BeautifulReport.add_test_img('test_1')
     def test_1(self):
         search_content = '1'
