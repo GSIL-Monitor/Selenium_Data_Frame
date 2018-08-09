@@ -29,7 +29,7 @@ import os
 # 通过ini文件获取发送邮件所需的参数值
 from public.common.operation_ini import OperationIni
 
-class SendMail:
+class SendMail(object):
     ''' 发送带有附件的邮件 '''
 
     def get_email_obj(self, email_sub, email_from, email_to_list):
@@ -101,10 +101,8 @@ class SendMail:
             smtp_obj.login(email_from, email_pwd)
             smtp_obj.sendmail(email_from, email_to_list, email_obj.as_string())
             smtp_obj.quit()
-            print('发送成功')
             return True
         except smtplib.SMTPException:
-            print('发送失败')
             return False
 
     def get_new_report(self, report_path):
@@ -129,10 +127,11 @@ class SendMail:
         若有想更改的，直接更改ini文件
         :return: null
         '''
-
-        # base_path = os.path.dirname(os.path.realpath(__file__))
         # 拼接路径，读取ini文件中发送邮件所需要的参数值
-        base_path = os.path.dirname(os.getcwd()).split('\\public')[0]
+        # 如果是处于根目录下的py文件调用本类，则使用这个
+        base_path = os.path.dirname(os.path.realpath(__file__)).split('\\public')[0]
+        # 如果是处于根目录下的第一层级目录调用本类，则使用这个
+        # base_path = os.path.dirname(os.getcwd()).split('\\public')[0]
         ini_path = os.path.join(base_path, 'parameter', 'email.ini')
         report_path = os.path.join(base_path, 'report', 'html')
 
@@ -155,7 +154,6 @@ class SendMail:
         #  正文若是文本则不需要传参content_type
         Email.attach_content(email_obj, email_content)
         Email.attach_adjunct(email_obj, adjunct_path, part_name)
-        print(to_addr_list, type(to_addr_list))
         Email.send_mail(email_obj, email_host, host_port, from_addr, pwd, to_addr_list.split(','))
 
 

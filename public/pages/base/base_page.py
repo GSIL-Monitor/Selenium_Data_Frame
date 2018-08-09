@@ -17,18 +17,18 @@ __mtime__ = '2018/8/6'
                   ┗┻┛  ┗┻┛
 """
 
-from selenium import webdriver
+import unittest
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-class BasicPage(object):
+class BasicPage(unittest.TestCase):
     ''' 所有页面的基类 '''
 
-    def __init__(self):
+    def __init__(self, driver):
         '''
         获得deriver，
         '''
-        self.driver = webdriver.Chrome()
+        self.driver = driver
 
     def open_url(self, url):
         '''
@@ -56,7 +56,7 @@ class BasicPage(object):
         '''
         self.driver.execute_script(js)
 
-    def input_value(self, args, value, is_clear=True):
+    def input_content(self, args, content, is_clear=True):
         '''
         输入框输入关键字
         :param args: 要定位的元素元组（By.xxx, 元素路径）
@@ -67,7 +67,7 @@ class BasicPage(object):
         input = self.get_element(args)
         if is_clear:
             input.clear()
-        input.send_keys(value)
+        input.send_keys(content)
 
     def is_page_title(self, pagetitle):
         '''
@@ -75,7 +75,7 @@ class BasicPage(object):
         @param pagetitile: 需判断的字段
         @return: True/False
         '''
-        return pagetitle in self.driver.title
+        return self.assertIn(pagetitle, self.driver.title)
 
     def is_current_url(self, current_url):
         '''
@@ -83,7 +83,8 @@ class BasicPage(object):
               @param current_url: 需判断的url字段
               @return: True/False
         '''
-        return current_url in self.driver.current_url
+        return self.assertIn(current_url, self.driver.current_url)
+
 
     def is_display(self, id):
         '''
@@ -91,5 +92,5 @@ class BasicPage(object):
         :param id: 元素id
         :return: null
         '''
-        js = 'document,getElementByid(list[id]).style.display = "block" '
+        js = 'document,getElementByid(list[%s]).style.display = "block" '%(id)
         self.driver.execute_script(js)

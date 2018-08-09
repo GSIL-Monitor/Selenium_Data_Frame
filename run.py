@@ -55,32 +55,18 @@ class Run(object):
     def begin_run(self,test_path, report_path, report_name):
         test_suite = self.add_test_case(test_path)
         self.do_report(test_suite, save_path=report_path, report_name=report_name)
-        SendMail.send_email()
+        SendMail().send_email()
 
 
 if __name__ == '__main__':
-    # # 项目路径
-    # base_path = os.path.dirname(os.path.realpath(__file__))
-    # # TestCase路径
-    # test_path = os.path.join(base_path, 'test_case')
-    # # html测试报告路径
-    # report_path = os.path.join(base_path, 'report', 'html')
-    # # 测试报告名称
-    # time = time.strftime('%H:%M:%S', time.localtime())
-    # print(time)
-    # report_name = '-'.join([time, '蚁族测试报告'])
-    # print(report_name)
-    # run = Run()
-    # run.begin_run(test_path=test_path, report_path=report_path, report_name=report_name)
-
-
     # 项目路径
     base_path = os.path.dirname(os.path.realpath(__file__))
     # TestCase路径
     test_path = os.path.join(base_path, 'test_case')
     # html测试报告路径
     report_path = os.path.join(base_path, 'report', 'html')
-
-    report = Run()
-    test_suite = report.add_test_case(test_path)
-    report.do_report(test_suite, save_path=report_path)
+    # 测试报告名称
+    time = time.strftime('%m.%d', time.localtime())
+    report_name = ''.join([time, '执行的测试报告'])
+    run = Run()
+    run.begin_run(test_path=test_path, report_path=report_path, report_name=report_name)
