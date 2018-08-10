@@ -1,0 +1,3 @@
+2018:08:10 172553 operation_log.py[line:64] WARNING 纯数字搜索用例，结果对比正确
+2018:08:10 172554 operation_log.py[line:64] WARNING 纯英文搜索用例，结果对比正确
+2018:08:10 172555 operation_log.py[line:64] WARNING 纯中文搜索用例，结果对比正确

@@ -35,7 +35,7 @@ class OperationLog(object):
             filename=log_path,  # log文件路径
             filemode='a+',  # 追加模式
             level=log_level,  # 日志级别
-            format='%(asctime)s %(filename)s[line:%(lineno)d] %(linename)s %(message)s',  # 内容格式
+            format='%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s %(message)s',  # 内容格式；单词错误的话，message报错
             datefmt='%Y:%m:%d %H%M%S',  # 内容的时间格式
         )
 
@@ -79,15 +79,16 @@ class OperationLog(object):
         '''
         logging.critical(message)
 
-if __name__ == '__main__':
-    # log_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'report')
-    # 想要获取的是当前项目的路径再进行拼接，用os.getcwd()
-    log_path = os.path.join((os.path.dirname(os.getcwd())).split('\public')[0], 'report', 'log', 'log1.log')
-    log_level = logging.WARN
-    logger = OperationLog(log_path, log_level)
-
-    logger.debug('debug message')
-    logger.info('info message')
-    logger.warn('warning message')
-    logger.error('error message')
-    logger.cri('critical message')
+# if __name__ == '__main__':
+#     # log_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'report')
+#     # 想要获取的是当前项目的路径再进行拼接，用os.getcwd()
+#     log_path = os.path.join((os.path.dirname(os.getcwd())).split('\public')[0], 'report', 'log', 'log1.log')
+#     print(log_path)
+#     log_level = logging.WARN
+#     logger = OperationLog(log_path, log_level)
+#
+#     logger.debug('debug message')
+#     logger.info('info message')
+#     logger.warn('warning message')
+#     logger.error('error message')
+#     logger.cri('critical message')

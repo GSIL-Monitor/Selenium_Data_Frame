@@ -32,10 +32,18 @@ class HomeTest(unittest.TestCase):
     '''
 
     global log_path
-    path = os.path.join(os.path.dirname(os.getcwd()), 'report', 'log')
+    # path = os.path.join(os.path.dirname(os.getcwd()), 'report', 'log')
+    # log_path = ''.join([path, '\\', time, '.log'])
+
+
+    # 如果是处于根目录下的py文件调用本类，则使用这个
+    base_path = os.path.dirname(os.path.realpath(__file__)).split('\\test_case')[0]
+    path = os.path.realpath(__file__)
+    # 如果是处于根目录下的第一层级目录调用本类，则使用这个
+    # base_path = os.path.dirname(os.getcwd()).split('\\test_case')[0]
+
     time = time.strftime('%m.%d', time.localtime())
-    log_path = ''.join([path, '\\', time, '.log'])
-    print(log_path)
+    log_path = os.path.join(base_path, 'report', 'log', '%s.log'%(time))
 
     def save_img(self, img_name):
         """
@@ -57,7 +65,7 @@ class HomeTest(unittest.TestCase):
         cls.log = OperationLog(log_path, log_level=logging.WARN)
 
     # BeautifulReport的装饰器，失败截图、保存、添加到报告中；图片名称需和方法名一致
-    # @BeautifulReport.add_test_img('test_1')
+    @BeautifulReport.add_test_img('test_1')
     def test_1(self):
         '''
          纯数字搜索
@@ -70,50 +78,50 @@ class HomeTest(unittest.TestCase):
         homepage.search_content(self.search_input, search_content)
         homepage.do_search(self.search_button)
         # 这里延迟1s进行判断，因为从首页进来搜索时，title的更新会慢一点
-        # time.sleep(1)
+        time.sleep(1)
         try:
             homepage.is_success(search_content)
-            self.log.warn('纯数字搜索用例，结果对比错误')
+            self.log.warn(u'纯数字搜索用例，结果对比正确')
         except AssertionError:
-            self.log.warn('纯数字搜索用例，结果对比正确')
+            self.log.warn(u'纯数字搜索用例，结果对比错误')
 
-    # @BeautifulReport.add_test_img('test_2')
-    # def test_2(self):
-    #     '''
-    #     纯英文搜索
-    #     :return: null
-    #     '''
-    #     search_content = 'one'
-    #     homepage = HomePage(self.driver)
-    #     homepage.open(self.home_url)
-    #     homepage.search_content(self.search_input, search_content)
-    #     homepage.do_search(self.search_button)
-    #     try:
-    #         homepage.is_success(search_content)
-    #         self.log.warn('纯英文搜索用例，结果对比错误')
-    #     except AssertionError:
-    #         self.log.warn('纯英文搜索用例，结果对比正确')
-    #
-    # @BeautifulReport.add_test_img('test_3')
-    # def test_3(self):
-    #     '''
-    #     纯中文搜索
-    #     :return: null
-    #     '''
-    #     search_content = '中国'
-    #     homepage = HomePage(self.driver)
-    #     homepage.open(self.home_url)
-    #     homepage.search_content(self.search_input, search_content)
-    #     homepage.do_search(self.search_button)
-    #     try:
-    #         homepage.is_success(search_content)
-    #         self.log.warn('纯中文搜索用例，结果对比错误')
-    #     except AssertionError:
-    #         self.log.warn('纯中文搜索用例，结果对比正确')
+    @BeautifulReport.add_test_img('test_2')
+    def test_2(self):
+        '''
+        纯英文搜索
+        :return: null
+        '''
+        search_content = 'one'
+        homepage = HomePage(self.driver)
+        homepage.open(self.home_url)
+        homepage.search_content(self.search_input, search_content)
+        homepage.do_search(self.search_button)
+        try:
+            homepage.is_success(search_content)
+            self.log.warn(u'纯英文搜索用例，结果对比正确')
+        except AssertionError:
+            self.log.warn(u'纯英文搜索用例，结果对比错误')
+
+    @BeautifulReport.add_test_img('test_3')
+    def test_3(self):
+        '''
+        纯中文搜索
+        :return: null
+        '''
+        search_content = '中国'
+        homepage = HomePage(self.driver)
+        homepage.open(self.home_url)
+        homepage.search_content(self.search_input, search_content)
+        homepage.do_search(self.search_button)
+        try:
+            homepage.is_success(search_content)
+            self.log.warn('纯中文搜索用例，结果对比正确')
+        except AssertionError:
+            self.log.warn('纯中文搜索用例，结果对比错误')
 
     @classmethod
     def tearDownClass(cls):
         cls.driver.quit()
 
-if __name__ == '__main__':
-    unittest.main()
+# if __name__ == '__main__':
+#     unittest.main()

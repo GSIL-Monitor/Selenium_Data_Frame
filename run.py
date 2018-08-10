@@ -52,8 +52,16 @@ class Run(object):
         report = BeautifulReport(test_suite)
         report.report(filename=report_name, description=description, log_path=save_path)
 
-    def begin_run(self,test_path, report_path, report_name):
-        test_suite = self.add_test_case(test_path)
+    def begin_run(self,test_path, report_path, report_name, py_rule='*test*.py'):
+        '''
+        运行测试用例，生成测试报告，发送邮件
+        :param test_path: 测试用例的py文件所在路径
+        :param report_path: 测试报告文件保存的路径
+        :param report_name: 测试报告的名称
+        :param py_rule: 需要加载到测试套件中的测试用例的py文件名称的正则
+        :return:
+        '''
+        test_suite = self.add_test_case(test_path, py_rule)
         self.do_report(test_suite, save_path=report_path, report_name=report_name)
         SendMail().send_email()
 
