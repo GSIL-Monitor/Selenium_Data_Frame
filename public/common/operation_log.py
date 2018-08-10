@@ -18,17 +18,20 @@ __mtime__ = '2018/8/6'
 """
 import logging
 
+
+
 class OperationLog(object):
     '''
     对日志文件的操作类（生成的html测试报告中有错误记录和截图，所以不调用该类了）
     '''
 
-    def __init__(self, log_path, log_level=logging.ERROR):
+    def __init__(self, log_path, log_level=logging.WARN):
         '''
         获得指定log文件对象以及设置该log文件的内容组成
         :param log_path: log文件路径
         :param log_level: 记录的级别
         '''
+        print('log_level',log_level)
         logging.basicConfig(
             filename=log_path,  # log文件路径
             filemode='a+',  # 追加模式
@@ -53,7 +56,6 @@ class OperationLog(object):
         '''
         logging.info(message)
 
-
     def warn(self, message):
         '''
         设置日志的WAR级别的内容
@@ -69,7 +71,6 @@ class OperationLog(object):
         @return: null
         '''
         logging.error(message)
-
 
     def cri(self, message):
         '''
