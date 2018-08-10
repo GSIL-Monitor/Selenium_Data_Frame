@@ -17,7 +17,7 @@ __mtime__ = '2018/8/6'
                   ┗┻┛  ┗┻┛
 """
 import logging
-
+import os
 
 
 class OperationLog(object):
@@ -25,13 +25,12 @@ class OperationLog(object):
     对日志文件的操作类（生成的html测试报告中有错误记录和截图，所以不调用该类了）
     '''
 
-    def __init__(self, log_path, log_level=logging.WARN):
+    def __init__(self, log_path, log_level=logging.ERROR):
         '''
         获得指定log文件对象以及设置该log文件的内容组成
         :param log_path: log文件路径
         :param log_level: 记录的级别
         '''
-        print('log_level',log_level)
         logging.basicConfig(
             filename=log_path,  # log文件路径
             filemode='a+',  # 追加模式
@@ -79,3 +78,16 @@ class OperationLog(object):
         @return: null
         '''
         logging.critical(message)
+
+if __name__ == '__main__':
+    # log_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'report')
+    # 想要获取的是当前项目的路径再进行拼接，用os.getcwd()
+    log_path = os.path.join((os.path.dirname(os.getcwd())).split('\public')[0], 'report', 'log', 'log1.log')
+    log_level = logging.WARN
+    logger = OperationLog(log_path, log_level)
+
+    logger.debug('debug message')
+    logger.info('info message')
+    logger.warn('warning message')
+    logger.error('error message')
+    logger.cri('critical message')

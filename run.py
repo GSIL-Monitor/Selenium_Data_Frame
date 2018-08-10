@@ -40,7 +40,7 @@ class Run(object):
         return unittest.defaultTestLoader.discover(start_dir=test_path, pattern=py_rule)
 
 
-    def do_report(self, test_suite, save_path, report_name='测试报告', description='蚁族自动化测试报告'):
+    def do_report(self, test_suite, save_path, report_name='测试报告', description='自动化测试报告'):
         '''
         运行测试套件，生成测试报告
         @param test_suite: 测试套件
