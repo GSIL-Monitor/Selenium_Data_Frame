@@ -1,6 +1,5 @@
 """
 __author__ = 'LZL'
-__mtime__ = '2018/8/6'
 # code is far away from bugs with the god animal protecting
     I love animals. They taste delicious.
               ┏┓      ┏┓
@@ -75,6 +74,7 @@ class BasicPage(unittest.TestCase):
         @param pagetitile: 需判断的字段
         @return: True/False
         '''
+        print(pagetitle,'`', self.driver.title)
         return self.assertIn(pagetitle, self.driver.title)
 
     def is_current_url(self, current_url):

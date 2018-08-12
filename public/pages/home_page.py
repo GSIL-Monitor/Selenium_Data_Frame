@@ -1,6 +1,5 @@
 """
 __author__ = 'LZL'
-__mtime__ = '2018/8/8'
 # code is far away from bugs with the god animal protecting
     I love animals. They taste delicious.
               ┏┓      ┏┓
@@ -18,7 +17,6 @@ __mtime__ = '2018/8/8'
 """
 
 from public.pages.base.base_page import BasicPage
-from selenium.webdriver.common.by import By
 
 class HomePage(BasicPage):
     '''
@@ -75,9 +73,6 @@ class HomePage(BasicPage):
         '''
         return self.is_page_title(pagetitle)
 
-if __name__ == '__main__':
-    page = HomePage()
-    page.open_url('http://antgoculture.com/index')
 
 
 

@@ -1,6 +1,5 @@
 """
 __author__ = 'LZL'
-__mtime__ = '2018/8/6'
 # code is far away from bugs with the god animal protecting
     I love animals. They taste delicious.
               ┏┓      ┏┓
@@ -46,7 +45,7 @@ class SendMail(object):
         # 邮件主题、发件人、收件人
         email_obj['Subject'] = Header(email_sub, 'utf-8')
         # 以,号连接收件人地址
-        email_to = ','.join(email_to_list)
+        email_to = ''.join(email_to_list)
         email_obj['From'] = Header(email_from)
         email_obj['To'] = Header(email_to)
         return email_obj
@@ -65,12 +64,12 @@ class SendMail(object):
         # 将邮件正文附加到根容器
         email_obj.attach(content)
 
-    def attach_adjunct(self, email_obj, adjunct_path, adjunct_name):
+    def attach_adjunct(self, email_obj, adjunct_path, report_name):
         '''
         添加附件到根容器，可以是文件也可以是文档
         @param email_obj: 邮件对象：根容器
         @param adjunct_path:  附件文件的路径
-        @param adjunct_name:  附件名称
+        @param report_name:  附件名称
         @return: null
         '''
 
@@ -79,7 +78,7 @@ class SendMail(object):
 
         adjunct["Content-Type"] = 'application/octet-stream'
         # 给附件添加头文件、设置名称，带格式
-        adjunct["Content-Disposition"] = 'attachment; filename="%s"'%adjunct_name
+        adjunct["Content-Disposition"] = 'attachment; filename="%s"'%report_name
         # 附件添加到根容器中
         email_obj.attach(adjunct)
 
@@ -132,9 +131,12 @@ class SendMail(object):
         base_path = os.path.dirname(os.path.realpath(__file__)).split('\\public')[0]
         # 如果是处于根目录下的第一层级目录调用本类，则使用这个
         # base_path = os.path.dirname(os.getcwd()).split('\\public')[0]
-        ini_path = os.path.join(base_path, 'parameter', 'email.ini')
-        report_path = os.path.join(base_path, 'report', 'html')
 
+        # 通过读取对应int文件的值获得路径
+        path_ini_path = os.path.join(base_path, 'config', 'path.ini')
+        path_ini = OperationIni(path_ini_path)
+        report_path = path_ini.get_value('path', 'report_path')
+        ini_path = os.path.join(base_path, 'config', 'email.ini')
         ini = OperationIni(ini_path)
         email_host = ini.get_value('server', 'email_host')
         host_port = ini.get_value('server', 'host_port')
@@ -144,7 +146,7 @@ class SendMail(object):
         to_addr_list = ini.get_value('content', 'to_addr_list')
         email_content = ini.get_value('content', 'email_content')
         email_subject = ini.get_value('content', 'email_subject')
-        part_name = ini.get_value('content', 'part_name')
+        adjunct_name = ini.get_value('content', 'adjunct_name')
         # report文件夹下最新的一个文件为附件
         Email = SendMail()
         adjunct_path = Email.get_new_report(report_path)
@@ -153,7 +155,8 @@ class SendMail(object):
         email_obj = Email.get_email_obj(email_subject, email_from, to_addr_list)
         #  正文若是文本则不需要传参content_type
         Email.attach_content(email_obj, email_content)
-        Email.attach_adjunct(email_obj, adjunct_path, part_name)
+        Email.attach_adjunct(email_obj, adjunct_path, adjunct_name)
+        # split:处理多个发送地址
         Email.send_mail(email_obj, email_host, host_port, from_addr, pwd, to_addr_list.split(','))
 
 
@@ -165,7 +168,7 @@ class SendMail(object):
         self.__send_config()
 
 
-if __name__ == "__main__":
-    SendMail().send_email()
+# if __name__ == "__main__":
+#     SendMail().send_email()
 
 

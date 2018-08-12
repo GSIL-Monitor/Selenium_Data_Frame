@@ -18,7 +18,8 @@ __mtime__ = '2018/8/8'
 """
 
 from BeautifulReport import BeautifulReport
-from public.common.send_mail import SendMail
+from public.common.operation_mail import SendMail
+from public.common.operation_ini import OperationIni
 import unittest
 import os
 import time
@@ -52,7 +53,7 @@ class Run(object):
         report = BeautifulReport(test_suite)
         report.report(filename=report_name, description=description, log_path=save_path)
 
-    def begin_run(self,test_path, report_path, report_name, py_rule='*test*.py'):
+    def begin_run(self,test_path, report_path, report_name, py_rule='test*.py'):
         '''
         运行测试用例，生成测试报告，发送邮件
         :param test_path: 测试用例的py文件所在路径
@@ -67,14 +68,18 @@ class Run(object):
 
 
 if __name__ == '__main__':
+
     # 项目路径
     base_path = os.path.dirname(os.path.realpath(__file__))
-    # TestCase路径
-    test_path = os.path.join(base_path, 'test_case')
-    # html测试报告路径
-    report_path = os.path.join(base_path, 'report', 'html')
     # 测试报告名称
     time = time.strftime('%m.%d', time.localtime())
     report_name = ''.join([time, '执行的测试报告'])
+
+    # 读取ini文件中的路径值
+    ini_path = os.path.join(base_path, 'config', 'path.ini')
+    ini = OperationIni(ini_path)
+    test_path = ini.get_value('path', 'test_path')
+    report_path = ini.get_value('path', 'report_path')
+    print(report_path)
     run = Run()
-    run.begin_run(test_path=test_path, report_path=report_path, report_name=report_name)
+    run.begin_run(test_path=test_path, report_path=report_path, report_name=report_name, py_rule='*_test*.py')
