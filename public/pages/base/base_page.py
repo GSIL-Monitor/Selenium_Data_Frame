@@ -74,7 +74,6 @@ class BasicPage(unittest.TestCase):
         @param pagetitile: 需判断的字段
         @return: True/False
         '''
-        print(pagetitle,'`', self.driver.title)
         return self.assertIn(pagetitle, self.driver.title)
 
     def is_current_url(self, current_url):
