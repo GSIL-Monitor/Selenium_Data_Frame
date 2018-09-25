@@ -9,7 +9,7 @@
   2.在pages中添加xxx_page.py文件
     1.1.其中的函数主要是对应页面的一些操作
   3.在test_case中添加x_test_xxx.py文本（本类继承unitest.Test）【建议复制例子的类然后再修改】
-    3.1.第一个x是执行顺序，一般是abc..（unittest.defaultTestLoader的默认执行顺序是按照ASCAII码表顺序）
+    3.1.第一个x是执行顺序
     3.2.后面的xxx最好是和page类的xxx一致，方便查看
     3.3.其中的函数主要是测试用例
   4.如果要发送邮件，则配置config/email.ini文件
