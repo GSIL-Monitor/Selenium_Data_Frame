@@ -1,0 +1,7 @@
+2018:09:25 09:00:49 a_test_baidu.py[line:54] WARNING 纯数字搜索，结果对比错误
+2018:09:25 09:00:50 a_test_baidu.py[line:71] WARNING 纯中文搜索，结果对比错误
+2018:09:25 09:01:03 b_test_home.py[line:84] WARNING 纯数字搜索，结果对比错误
+2018:09:25 09:01:55 a_test_baidu.py[line:71] WARNING 纯中文搜索，结果对比错误
+2018:09:25 09:02:09 b_test_home.py[line:84] WARNING 纯数字搜索，结果对比错误
+2018:09:25 09:05:57 b_test_home.py[line:84] WARNING 纯数字搜索，结果对比错误
+2018:09:25 09:06:59 b_test_home.py[line:84] WARNING 纯数字搜索，结果对比错误

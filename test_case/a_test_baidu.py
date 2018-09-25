@@ -8,6 +8,7 @@ import unittest
 import time
 import os
 
+
 class BaiduTest(unittest.TestCase):
     global log_path
     # 如果是处于根目录下的py文件调用本类，则使用这个
@@ -45,11 +46,8 @@ class BaiduTest(unittest.TestCase):
         self.page.open(self.url)
         self.page.search(self.search_ele, content)
         self.page.click(self.button_ele)
-        # 这里延迟1s进行判断，因为从首页进来搜索时，title的更新会慢一点
-        time.sleep(1)
         try:
             self.page.is_success(content)
-            # logging.warning('纯数字搜索，结果对比正确')
         except AssertionError:
             logging.warning('纯数字搜索，结果对比错误')
             raise AssertionError
@@ -66,7 +64,6 @@ class BaiduTest(unittest.TestCase):
         self.page.click(self.button_ele)
         try:
             self.page.is_success(content)
-            # logging.warning('纯中文搜索，结果对比正确')
         except AssertionError:
             logging.warning('纯中文搜索，结果对比错误')
             raise AssertionError

@@ -40,7 +40,7 @@ class BasicPage(unittest.TestCase):
 
     def get_element(self, args):
         '''
-        定位元素，显示等待10秒
+        定位元素，显性等待10秒
         :param args: 元组（By.xx,元素路径）
         :return: 元素对象
         '''
@@ -74,7 +74,8 @@ class BasicPage(unittest.TestCase):
         @param pagetitile: 需判断的字段
         @return: True/False
         '''
-        return self.assertIn(pagetitle, self.driver.title)
+        # return self.assertIn(pagetitle, self.driver.title)
+        return WebDriverWait(self.driver, 10).until(EC.title_contains(pagetitle))
 
     def is_current_url(self, current_url):
         '''
@@ -85,11 +86,10 @@ class BasicPage(unittest.TestCase):
         return self.assertIn(current_url, self.driver.current_url)
 
 
-    def is_display(self, id):
+    def is_visibility(self, args):
         '''
         元素的属性是否可见
-        :param id: 元素id
-        :return: null
+        :param args: 元组（By.xx,元素路径）
+        :return: True/False
         '''
-        js = 'document,getElementByid(list[%s]).style.display = "block" '%(id)
-        self.driver.execute_script(js)
+        return WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(args))

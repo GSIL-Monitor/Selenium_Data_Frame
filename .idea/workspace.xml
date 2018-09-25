@@ -2,33 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="20e237af-b9f3-4d39-bf9d-7ebf8cb5db69" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/config/path.ini" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/pages/baidu_page.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_case/a_test_baidu.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/parameter/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/parameter/email.ini" beforeDir="false" afterPath="$PROJECT_DIR$/config/email.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/public/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/common/operation_excel.py" beforeDir="false" afterPath="$PROJECT_DIR$/public/common/operation_excel.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/common/operation_ini.py" beforeDir="false" afterPath="$PROJECT_DIR$/public/common/operation_ini.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/common/operation_log.py" beforeDir="false" afterPath="$PROJECT_DIR$/public/common/operation_log.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/common/send_mail.py" beforeDir="false" afterPath="$PROJECT_DIR$/public/common/operation_mail.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/pages/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/public/pages/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/pages/base/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/public/pages/base/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/email.ini" beforeDir="false" afterPath="$PROJECT_DIR$/config/email.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/path.ini" beforeDir="false" afterPath="$PROJECT_DIR$/config/path.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/test_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/test_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/test_baidu_two.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/test_baidu_two.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/common/operation_mail.py" beforeDir="false" afterPath="$PROJECT_DIR$/public/common/operation_mail.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/pages/base/base_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/public/pages/base/base_page.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/pages/home_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/public/pages/home_page.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/pages/register_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/public/pages/register_page.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/report/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/report/html/08.09执行的测试报告.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/report/html/08.10执行的测试报告.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/report/log/08.10.log" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_case/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_case/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_case/a_test_home.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_case/b_test_home.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_case/a_test_baidu.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_case/a_test_baidu.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_case/b_test_home.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_case/b_test_home.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -39,32 +23,46 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/Selenium_Data_Frame$Unittests_in_c_test_test_py.coverage" NAME="Unittests in c_test_test.py Coverage Results" MODIFIED="1534069854024" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_case" />
+    <SUITE FILE_PATH="coverage/Selenium_Data_Frame$Unittests_in_b_test_home_py.coverage" NAME="Unittests in b_test_home.py Coverage Results" MODIFIED="1537838679551" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_case" />
+    <SUITE FILE_PATH="coverage/Selenium_Data_Frame$Unittests_in_a_test_baidu_py.coverage" NAME="Unittests in a_test_baidu.py Coverage Results" MODIFIED="1537838737027" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_case" />
     <SUITE FILE_PATH="coverage/Selenium_Data_Frame$Unittests_for_a_test_home_HomeTest_test_2.coverage" NAME="Unittests for a_test_home.HomeTest.test_2 Coverage Results" MODIFIED="1534065822509" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_case" />
     <SUITE FILE_PATH="coverage/Selenium_Data_Frame$Unittests_for_c_test_test_HomeTest.coverage" NAME="Unittests for c_test_test.HomeTest Coverage Results" MODIFIED="1534069774673" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_case" />
     <SUITE FILE_PATH="coverage/Selenium_Data_Frame$Unittests_for_a_test_home_HomeTest_test_search_one.coverage" NAME="Unittests for a_test_home.HomeTest.test_search_one Coverage Results" MODIFIED="1533773153440" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_case" />
     <SUITE FILE_PATH="coverage/Selenium_Data_Frame$Unittests_in_b_test_baidu_py.coverage" NAME="Unittests in b_test_baidu.py Coverage Results" MODIFIED="1534070025164" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_case" />
+    <SUITE FILE_PATH="coverage/Selenium_Data_Frame$Unittests_for_b_test_home_HomeTest.coverage" NAME="Unittests for b_test_home.HomeTest Coverage Results" MODIFIED="1537838525469" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_case" />
     <SUITE FILE_PATH="coverage/Selenium_Data_Frame$Unittests_for_a_test_home_HomeTest_test_1.coverage" NAME="Unittests for a_test_home.HomeTest.test_1 Coverage Results" MODIFIED="1534067891706" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_case" />
-    <SUITE FILE_PATH="coverage/Selenium_Data_Frame$Unittests_for_b_test_home_HomeTest_test_1.coverage" NAME="Unittests for b_test_home.HomeTest.test_1 Coverage Results" MODIFIED="1534074227650" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_case" />
+    <SUITE FILE_PATH="coverage/Selenium_Data_Frame$Unittests_for_b_test_home_HomeTest_test_1.coverage" NAME="Unittests for b_test_home.HomeTest.test_1 Coverage Results" MODIFIED="1537838652959" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_case" />
     <SUITE FILE_PATH="coverage/Selenium_Data_Frame$operation_ini.coverage" NAME="operation_ini Coverage Results" MODIFIED="1533601894667" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/public/common" />
     <SUITE FILE_PATH="coverage/Selenium_Data_Frame$Unittests_for_a_test_home_HomeTest_test_3.coverage" NAME="Unittests for a_test_home.HomeTest.test_3 Coverage Results" MODIFIED="1534065511014" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_case" />
     <SUITE FILE_PATH="coverage/Selenium_Data_Frame$Unittests_in_a_test_home_py.coverage" NAME="Unittests in a_test_home.py Coverage Results" MODIFIED="1534069526753" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_case" />
     <SUITE FILE_PATH="coverage/Selenium_Data_Frame$send_mail.coverage" NAME="send_mail Coverage Results" MODIFIED="1534065220141" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/public/common" />
     <SUITE FILE_PATH="coverage/Selenium_Data_Frame$operation_log.coverage" NAME="operation_log Coverage Results" MODIFIED="1534064213629" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/public/common" />
-    <SUITE FILE_PATH="coverage/Selenium_Data_Frame$run.coverage" NAME="run Coverage Results" MODIFIED="1534075999000" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Selenium_Data_Frame$run.coverage" NAME="run Coverage Results" MODIFIED="1537838839489" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Selenium_Data_Frame$Unittests_for_a_test_home_HomeTest.coverage" NAME="Unittests for a_test_home.HomeTest Coverage Results" MODIFIED="1534067342658" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_case" />
     <SUITE FILE_PATH="coverage/Selenium_Data_Frame$Unittests_for_b_test_baidu_BaiduTest.coverage" NAME="Unittests for b_test_baidu.BaiduTest Coverage Results" MODIFIED="1534069930766" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_case" />
     <SUITE FILE_PATH="coverage/Selenium_Data_Frame$Unittests_for_b_test_baidu_BaiduTest_test_baidu_one.coverage" NAME="Unittests for b_test_baidu.BaiduTest.test_baidu_one Coverage Results" MODIFIED="1534070152562" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_case" />
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="a_test_baidu.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test_case/a_test_baidu.py">
+      <file leaf-file-name="home_page.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/pages/home_page.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="60" column="22" lean-forward="true" selection-start-line="60" selection-start-column="22" selection-end-line="60" selection-end-column="22" />
-              <folding>
-                <element signature="e#0#43#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="119">
+              <caret line="4" column="23" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -72,8 +70,8 @@
       <file leaf-file-name="b_test_home.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test_case/b_test_home.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="56" column="26" lean-forward="true" selection-start-line="56" selection-start-column="26" selection-end-line="56" selection-end-column="26" />
+            <state relative-caret-position="203">
+              <caret line="114" lean-forward="true" selection-start-line="114" selection-end-line="114" />
               <folding>
                 <element signature="e#451#503#0" expanded="true" />
               </folding>
@@ -81,38 +79,32 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="path.ini" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/path.ini">
+      <file leaf-file-name="a_test_baidu.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test_case/a_test_baidu.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="5" column="31" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
+            <state relative-caret-position="1552">
+              <caret line="59" column="11" lean-forward="true" selection-start-line="59" selection-start-column="11" selection-end-line="59" selection-end-column="11" />
+              <folding>
+                <element signature="e#0#43#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="email.ini" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/email.ini">
+      <file leaf-file-name="expected_conditions.py" pinned="false" current-in-tab="false">
+        <entry file="file://F:/Pytyhon3.6/Lib/site-packages/selenium/webdriver/support/expected_conditions.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="4" column="10" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
+            <state relative-caret-position="199">
+              <caret line="45" column="8" selection-start-line="45" selection-start-column="8" selection-end-line="45" selection-end-column="8" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="operation_excel.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/common/operation_excel.py">
+      <file leaf-file-name="09.25.log" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/log/09.25.log">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="81">
-              <caret line="3" column="8" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="baidu_page.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/pages/baidu_page.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="513">
-              <caret line="19" column="26" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="26" />
+            <state relative-caret-position="150">
+              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
             </state>
           </provider>
         </entry>
@@ -120,8 +112,8 @@
       <file leaf-file-name="run.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/run.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
-              <caret line="77" column="18" lean-forward="true" selection-start-line="77" selection-start-column="18" selection-end-line="77" selection-end-column="18" />
+            <state relative-caret-position="230">
+              <caret line="70" lean-forward="true" selection-start-line="70" selection-end-line="70" />
               <folding>
                 <element signature="e#0#473#1" />
                 <element signature="e#475#518#0" expanded="true" />
@@ -130,29 +122,41 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="08.12.log" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/log/08.12.log">
-          <provider selected="true" editor-type-id="LogFileEditorProvider">
-            <state relative-caret-position="54">
-              <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+      <file leaf-file-name="operation_mail.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/common/operation_mail.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="396">
+              <caret line="149" column="30" lean-forward="true" selection-start-line="149" selection-start-column="30" selection-end-line="149" selection-end-column="30" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/README.md">
+      <file leaf-file-name="email.ini" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/email.ini">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="6" column="23" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
+            <state relative-caret-position="150">
+              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="operation_ini.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/common/operation_ini.py">
+      <file leaf-file-name="base_page.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/pages/base/base_page.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="486">
-              <caret line="18" column="17" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="17" />
+            <state relative-caret-position="230">
+              <caret line="75" column="11" lean-forward="true" selection-start-line="75" selection-start-column="11" selection-end-line="75" selection-end-column="11" />
+              <folding>
+                <element signature="e#452#467#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="baidu_page.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/pages/baidu_page.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="350">
+              <caret line="31" column="22" lean-forward="true" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -179,6 +183,7 @@
       <find>file_</find>
       <find>log_</find>
       <find>log_file</find>
+      <find>EC</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -199,7 +204,6 @@
         <option value="$PROJECT_DIR$/parameter/email.ini" />
         <option value="$PROJECT_DIR$/test_case/c_test_test.py" />
         <option value="$PROJECT_DIR$/report/log/08.12.log" />
-        <option value="$PROJECT_DIR$/public/pages/base/base_page.py" />
         <option value="$PROJECT_DIR$/public/common/operation_excel.py" />
         <option value="$PROJECT_DIR$/public/common/operation_ini.py" />
         <option value="$PROJECT_DIR$/public/common/send_mail.py" />
@@ -215,15 +219,17 @@
         <option value="$PROJECT_DIR$/public/pages/__init__.py" />
         <option value="$PROJECT_DIR$/public/pages/base/__init__.py" />
         <option value="$PROJECT_DIR$/test_case/a_test_home.py" />
-        <option value="$PROJECT_DIR$/config/path.ini" />
         <option value="$PROJECT_DIR$/test_case/b_test_baidu.py" />
-        <option value="$PROJECT_DIR$/run.py" />
         <option value="$PROJECT_DIR$/public/common/operation_log.py" />
-        <option value="$PROJECT_DIR$/test_case/a_test_baidu.py" />
         <option value="$PROJECT_DIR$/log/08.12.log" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/config/path.ini" />
+        <option value="$PROJECT_DIR$/public/common/operation_mail.py" />
         <option value="$PROJECT_DIR$/config/email.ini" />
+        <option value="$PROJECT_DIR$/public/pages/base/base_page.py" />
+        <option value="$PROJECT_DIR$/run.py" />
         <option value="$PROJECT_DIR$/test_case/b_test_home.py" />
+        <option value="$PROJECT_DIR$/test_case/a_test_baidu.py" />
       </list>
     </option>
   </component>
@@ -246,7 +252,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -302,6 +307,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -356,6 +362,20 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
+    <configuration name="Unittests for b_test_home.HomeTest" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="Selenium_Data_Frame" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test_case" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;b_test_home.HomeTest&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+    </configuration>
     <configuration name="Unittests for b_test_home.HomeTest.test_1" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="Selenium_Data_Frame" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -368,34 +388,6 @@
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
       <option name="_new_target" value="&quot;b_test_home.HomeTest.test_1&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-    </configuration>
-    <configuration name="Unittests for test_case.a_test_baidu.BaiduTest" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <module name="Selenium_Data_Frame" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test_case" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_case.a_test_baidu.BaiduTest&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-    </configuration>
-    <configuration name="Unittests for test_case.a_test_baidu.BaiduTest.test_baidu_one" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <module name="Selenium_Data_Frame" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test_case" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_case.a_test_baidu.BaiduTest.test_baidu_one&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
     </configuration>
     <configuration name="Unittests in a_test_baidu.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
@@ -412,20 +404,34 @@
       <option name="_new_target" value="&quot;$PROJECT_DIR$/test_case/a_test_baidu.py&quot;" />
       <option name="_new_targetType" value="&quot;PATH&quot;" />
     </configuration>
+    <configuration name="Unittests in b_test_home.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="Selenium_Data_Frame" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test_case" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/test_case/b_test_home.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+    </configuration>
     <list>
       <item itemvalue="Python.run" />
-      <item itemvalue="Python tests.Unittests for test_case.a_test_baidu.BaiduTest" />
-      <item itemvalue="Python tests.Unittests for test_case.a_test_baidu.BaiduTest.test_baidu_one" />
-      <item itemvalue="Python tests.Unittests in a_test_baidu.py" />
       <item itemvalue="Python tests.Unittests for b_test_home.HomeTest.test_1" />
+      <item itemvalue="Python tests.Unittests in b_test_home.py" />
+      <item itemvalue="Python tests.Unittests for b_test_home.HomeTest" />
+      <item itemvalue="Python tests.Unittests in a_test_baidu.py" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.run" />
-        <item itemvalue="Python tests.Unittests for b_test_home.HomeTest.test_1" />
-        <item itemvalue="Python tests.Unittests for test_case.a_test_baidu.BaiduTest.test_baidu_one" />
         <item itemvalue="Python tests.Unittests in a_test_baidu.py" />
-        <item itemvalue="Python tests.Unittests for test_case.a_test_baidu.BaiduTest" />
+        <item itemvalue="Python tests.Unittests in b_test_home.py" />
+        <item itemvalue="Python tests.Unittests for b_test_home.HomeTest.test_1" />
+        <item itemvalue="Python tests.Unittests for b_test_home.HomeTest" />
       </list>
     </recent_temporary>
   </component>
@@ -443,24 +449,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittests_in_b_test_baidu_py - 2018.08.12 at 18h 25m 56s.xml">
-      <configuration name="Unittests in b_test_baidu.py" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_in_b_test_baidu_py - 2018.08.12 at 18h 26m 44s.xml">
-      <configuration name="Unittests in b_test_baidu.py" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_in_b_test_baidu_py - 2018.08.12 at 18h 29m 00s.xml">
-      <configuration name="Unittests in b_test_baidu.py" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_for_c_test_test_HomeTest - 2018.08.12 at 18h 29m 44s.xml">
-      <configuration name="Unittests for c_test_test.HomeTest" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_in_c_test_test_py - 2018.08.12 at 18h 30m 54s.xml">
-      <configuration name="Unittests in c_test_test.py" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_for_b_test_baidu_BaiduTest - 2018.08.12 at 18h 32m 11s.xml">
-      <configuration name="Unittests for b_test_baidu.BaiduTest" configurationId="tests" />
-    </history-entry>
     <history-entry file="Unittests_for_b_test_baidu_BaiduTest_test_baidu_one - 2018.08.12 at 18h 32m 43s.xml">
       <configuration name="Unittests for b_test_baidu.BaiduTest.test_baidu_one" configurationId="tests" />
     </history-entry>
@@ -473,6 +461,24 @@
     <history-entry file="Unittests_for_b_test_home_HomeTest_test_1 - 2018.08.12 at 19h 44m 01s.xml">
       <configuration name="Unittests for b_test_home.HomeTest.test_1" configurationId="tests" />
     </history-entry>
+    <history-entry file="Unittests_in_b_test_home_py - 2018.09.25 at 09h 21m 45s.xml">
+      <configuration name="Unittests in b_test_home.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_b_test_home_HomeTest - 2018.09.25 at 09h 22m 21s.xml">
+      <configuration name="Unittests for b_test_home.HomeTest" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_b_test_home_HomeTest_test_1 - 2018.09.25 at 09h 24m 06s.xml">
+      <configuration name="Unittests for b_test_home.HomeTest.test_1" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_b_test_home_HomeTest_test_1 - 2018.09.25 at 09h 24m 26s.xml">
+      <configuration name="Unittests for b_test_home.HomeTest.test_1" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_b_test_home_py - 2018.09.25 at 09h 25m 09s.xml">
+      <configuration name="Unittests in b_test_home.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_a_test_baidu_py - 2018.09.25 at 09h 25m 49s.xml">
+      <configuration name="Unittests in a_test_baidu.py" configurationId="tests" />
+    </history-entry>
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -484,18 +490,18 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32904884" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="7" weight="0.32897604" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.12206573" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3006536" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2035139" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20788912" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="right" id="Database" order="3" />
+      <window_info active="true" anchor="right" id="Database" order="3" visible="true" weight="0.32995737" />
       <window_info anchor="right" id="SciView" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -532,17 +538,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/run.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="7" column="27" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#473#1" />
-            <element signature="e#475#518#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/common/operation_log.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="600">
@@ -569,7 +564,7 @@
         <state relative-caret-position="2040">
           <caret line="70" column="18" lean-forward="true" selection-start-line="70" selection-start-column="18" selection-end-line="70" selection-end-column="18" />
           <folding>
-            <element signature="e#475#490#0" expanded="true" />
+            <element signature="e#452#467#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -585,9 +580,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4020">
           <caret line="143" column="12" selection-start-line="143" selection-start-column="12" selection-end-line="143" selection-end-column="12" />
-          <folding>
-            <element signature="e#520#534#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -630,43 +622,14 @@
     <entry file="file://F:/Pytyhon3.6/Lib/logging/__init__.py" />
     <entry file="file://$PROJECT_DIR$/report/log/log1.log" />
     <entry file="file://$PROJECT_DIR$/report/log/08.10.log" />
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/logging/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="1338" column="23" selection-start-line="1338" selection-start-column="23" selection-end-line="1338" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/logging/__init__.py" />
     <entry file="file://$PROJECT_DIR$/report/08.12执行的测试报告.html" />
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/unittest/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="259" selection-start-line="259" selection-end-line="259" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/unittest/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/unittest/main.py" />
     <entry file="file://$PROJECT_DIR$/test_case/c_test_test.py" />
     <entry file="file://$PROJECT_DIR$/report/log/08.12.log" />
     <entry file="file://$PROJECT_DIR$/public/pages/DATE.py" />
     <entry file="file://$PROJECT_DIR$/public/pages/tet.py" />
     <entry file="file://$PROJECT_DIR$/public/pages/test.py" />
-    <entry file="file://$PROJECT_DIR$/public/common/operation_mail.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/pages/base/base_page.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="3" column="8" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/pages/base/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="49">
@@ -678,13 +641,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="49">
           <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/pages/home_page.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="530">
-          <caret line="75" lean-forward="true" selection-start-line="75" selection-end-line="75" />
         </state>
       </provider>
     </entry>
@@ -716,52 +672,98 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/BeautifulReport/BeautifulReport.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6669">
-          <caret line="257" selection-start-line="257" selection-end-line="257" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/pages/baidu_page.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="19" column="26" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/BeautifulReport/BeautifulReport.py" />
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
+        <state relative-caret-position="180">
           <caret line="6" column="23" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/common/operation_ini.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
+        <state relative-caret-position="540">
           <caret line="18" column="17" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/path.ini">
+    <entry file="file://$PROJECT_DIR$/log/08.12.log">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="5" column="31" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
+        <state relative-caret-position="60">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/common/operation_excel.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
+        <state relative-caret-position="90">
           <caret line="3" column="8" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/path.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/common/operation_mail.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="149" column="30" lean-forward="true" selection-start-line="149" selection-start-column="30" selection-end-line="149" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/email.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/pages/baidu_page.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="31" column="22" lean-forward="true" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://F:/Pytyhon3.6/Lib/site-packages/selenium/webdriver/support/expected_conditions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="45" column="8" selection-start-line="45" selection-start-column="8" selection-end-line="45" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/pages/home_page.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="4" column="23" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/pages/base/base_page.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="75" column="11" lean-forward="true" selection-start-line="75" selection-start-column="11" selection-end-line="75" selection-end-column="11" />
+          <folding>
+            <element signature="e#452#467#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/09.25.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/run.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="77" column="18" lean-forward="true" selection-start-line="77" selection-start-column="18" selection-end-line="77" selection-end-column="18" />
+        <state relative-caret-position="230">
+          <caret line="70" lean-forward="true" selection-start-line="70" selection-end-line="70" />
           <folding>
             <element signature="e#0#473#1" />
             <element signature="e#475#518#0" expanded="true" />
@@ -769,17 +771,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/email.ini">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="4" column="10" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test_case/b_test_home.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="56" column="26" lean-forward="true" selection-start-line="56" selection-start-column="26" selection-end-line="56" selection-end-column="26" />
+        <state relative-caret-position="203">
+          <caret line="114" lean-forward="true" selection-start-line="114" selection-end-line="114" />
           <folding>
             <element signature="e#451#503#0" expanded="true" />
           </folding>
@@ -788,18 +783,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test_case/a_test_baidu.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="60" column="22" lean-forward="true" selection-start-line="60" selection-start-column="22" selection-end-line="60" selection-end-column="22" />
+        <state relative-caret-position="1552">
+          <caret line="59" column="11" lean-forward="true" selection-start-line="59" selection-start-column="11" selection-end-line="59" selection-end-column="11" />
           <folding>
             <element signature="e#0#43#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/log/08.12.log">
-      <provider selected="true" editor-type-id="LogFileEditorProvider">
-        <state relative-caret-position="54">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
         </state>
       </provider>
     </entry>

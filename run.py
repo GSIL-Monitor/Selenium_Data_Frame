@@ -31,7 +31,7 @@ class Run(object):
 
 
 
-    def add_test_case(self, test_path, py_rule='*test*.py'):
+    def add_test_case(self, test_path, py_rule):
         '''
         加载所有测试用例
         @param test_path: 测试用例所在目录
@@ -64,7 +64,7 @@ class Run(object):
         '''
         test_suite = self.add_test_case(test_path, py_rule)
         self.do_report(test_suite, save_path=report_path, report_name=report_name)
-        SendMail().send_email()
+        # SendMail().send_email()
 
 
 if __name__ == '__main__':
@@ -82,4 +82,4 @@ if __name__ == '__main__':
     report_path = ini.get_value('path', 'report_path')
     print(report_path)
     run = Run()
-    run.begin_run(test_path=test_path, report_path=report_path, report_name=report_name, py_rule='*_test*.py')
+    run.begin_run(test_path=test_path, report_path=report_path, report_name=report_name, py_rule='*test*.py')

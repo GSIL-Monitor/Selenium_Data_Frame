@@ -56,7 +56,7 @@ class HomeTest(unittest.TestCase):
         cls.driver = webdriver.Chrome()
         # 注意要初始化HomePage对象
         cls.homepage = HomePage(cls.driver)
-        cls.home_url = 'http://xxx.com/index'
+        cls.home_url = 'http://antgoculture.com/index'
         cls.search_input = (By.CSS_SELECTOR, '.input')
         cls.search_button = (By.CSS_SELECTOR, '.search')
         cls.register = (By.CSS_SELECTOR, 'div.text > a:nth-child(1)')
@@ -70,8 +70,6 @@ class HomeTest(unittest.TestCase):
          纯数字搜索
         '''
         search_content = '1'
-        # # 注意要初始化HomePage对象
-        # homepage = HomePage(self.driver)
         self.homepage.open(self.home_url)
         self.homepage.search_content(self.search_input, search_content)
         self.homepage.do_search(self.search_button)
@@ -79,7 +77,6 @@ class HomeTest(unittest.TestCase):
         # time.sleep(1)
         try:
             self.homepage.is_success(search_content)
-            # logging.warning('纯数字搜索，结果对比正确')
         except AssertionError:
             logging.warning('纯数字搜索，结果对比错误')
             # 记得要触发该异常，否则就算case失败了，也会pass
@@ -92,16 +89,13 @@ class HomeTest(unittest.TestCase):
         纯英文搜索
         '''
         search_content = 'one'
-        # homepage = HomePage(self.driver)
         self.homepage.open(self.home_url)
         self.homepage.search_content(self.search_input, search_content)
         self.homepage.do_search(self.search_button)
         try:
             self.homepage.is_success(search_content)
-            # logging.warning('纯英文搜索，结果对比正确')
         except AssertionError:
             logging.warning('纯英文搜索，结果对比错误')
-            # 记得要触发该异常，否则就算case失败了，也会pass
             raise AssertionError
 
     @BeautifulReport.add_test_img('test_3')
@@ -110,16 +104,13 @@ class HomeTest(unittest.TestCase):
         纯中文搜索
         '''
         search_content = '中国'
-        # homepage = HomePage(self.driver)
         self.homepage.open(self.home_url)
         self.homepage.search_content(self.search_input, search_content)
         self.homepage.do_search(self.search_button)
         try:
             self.homepage.is_success(search_content)
-            # logging.warning('纯中文搜索，结果对比正确')
         except AssertionError:
             logging.warning('纯中文搜索，结果对比错误')
-            # 记得要触发该异常，否则就算case失败了，也会pass
             raise AssertionError
 
     @classmethod

@@ -146,7 +146,7 @@ class SendMail(object):
         to_addr_list = ini.get_value('content', 'to_addr_list')
         email_content = ini.get_value('content', 'email_content')
         email_subject = ini.get_value('content', 'email_subject')
-        adjunct_name = ini.get_value('content', 'adjunct_name')
+        adjunct_name = ini.get_value('content', 'part_name')
         # report文件夹下最新的一个文件为附件
         Email = SendMail()
         adjunct_path = Email.get_new_report(report_path)
