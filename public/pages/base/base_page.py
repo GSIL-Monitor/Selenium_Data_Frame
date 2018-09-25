@@ -17,10 +17,11 @@ __author__ = 'LZL'
 """
 
 import unittest
+from selenium.webdriver import ActionChains
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-class BasicPage(unittest.TestCase):
+class BasicPage():
     ''' 所有页面的基类 '''
 
     def __init__(self, driver):
@@ -38,14 +39,17 @@ class BasicPage(unittest.TestCase):
         self.driver.get(url)
         self.driver.maximize_window()
 
-    def get_element(self, args):
+    def get_element(self, locator):
         '''
         定位元素，显性等待10秒
-        :param args: 元组（By.xx,元素路径）
+        :param locator: 元组（By.xx,元素路径）
         :return: 元素对象
         '''
-        WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(args))
-        return self.driver.find_element(args[0], args[1])
+        try:
+            WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(locator))
+            return self.driver.find_element(locator[0], locator[1])
+        except:
+            print('使用%s定位的%s元素定位失败'%(locator[0], locator[1]))
 
     def do_js(self, js):
         '''
@@ -55,15 +59,15 @@ class BasicPage(unittest.TestCase):
         '''
         self.driver.execute_script(js)
 
-    def input_content(self, args, content, is_clear=True):
+    def input_content(self, locator, content, is_clear=True):
         '''
         输入框输入关键字
-        :param args: 要定位的元素元组（By.xxx, 元素路径）
-        :param value: 关键字
+        :param locator: 要定位的元素元组（By.xxx, 元素路径）
+        :param content: 关键字
         :param is_clear: 是否先清空输入框
         :return: null
         '''
-        input = self.get_element(args)
+        input = self.get_element(locator)
         if is_clear:
             input.clear()
         input.send_keys(content)
@@ -86,10 +90,45 @@ class BasicPage(unittest.TestCase):
         return self.assertIn(current_url, self.driver.current_url)
 
 
-    def is_visibility(self, args):
+    def is_visibility(self, locator):
         '''
         元素的属性是否可见
-        :param args: 元组（By.xx,元素路径）
+        :param locator: 元组（By.xx,元素路径）
         :return: True/False
         '''
-        return WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(args))
+        return WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(locator))
+
+
+    def move_to_element(self, locator):
+        '''
+        鼠标移动到指定的元素上方
+        :param locator: 元组（By.xx,元素路径）
+        :return: None
+        '''
+        element = self.get_element(locator)
+        ActionChains(self.driver).move_to_element(element).perform()
+
+    def forward(self):
+        '''
+        前进一页
+        :return:None
+        '''
+        self.driver.forward()
+
+    def back(self):
+        '''
+        后退一页
+        :return:None
+        '''
+        self.driver.back()
+
+    def open_at_current(self, locator, js):
+        '''
+        执行让target属性值变空的js，并点击该元素
+        :param locator:
+        :param js: target属性值变空；例如：document.getElementsByClassName("mnav")[0].target="";
+        :return: None
+        '''
+        self.do_js(js)
+        self.get_element(locator).click()
+
