@@ -124,7 +124,7 @@ class BasicPage():
 
     def open_at_current(self, locator, js):
         '''
-        执行让target属性值变空的js，并点击该元素
+        让新打开窗口的超链在当前窗口打开；执行让target属性值变空的js，并点击该元素
         :param locator:
         :param js: target属性值变空；例如：document.getElementsByClassName("mnav")[0].target="";
         :return: None
