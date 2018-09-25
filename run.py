@@ -80,6 +80,5 @@ if __name__ == '__main__':
     ini = OperationIni(ini_path)
     test_path = ini.get_value('path', 'test_path')
     report_path = ini.get_value('path', 'report_path')
-    print(report_path)
     run = Run()
     run.begin_run(test_path=test_path, report_path=report_path, report_name=report_name, py_rule='*test*.py')

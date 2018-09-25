@@ -16,8 +16,8 @@ __author__ = 'LZL'
                   ┗┻┛  ┗┻┛
 """
 
-import unittest
 from selenium.webdriver import ActionChains
+from selenium.webdriver.support.select import Select
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
@@ -131,4 +131,71 @@ class BasicPage():
         '''
         self.do_js(js)
         self.get_element(locator).click()
+
+    def get_attribute(self, locator, ab_name):
+        '''
+        获取元素的属性
+        :param locator:
+        :param ab_name:
+        :return:
+        '''
+        element = self.get_element(locator)
+        return element.get_attribute(ab_name)
+
+    def focus_to_element(self, locator):
+        '''
+        聚焦到元素位置（跳到）
+        :param locator:
+        :return:
+        '''
+        element = self.get_element(locator)
+        self.driver.execute_script("arguments[0].scrollIntoView();", element)
+
+    def scroll_top(self):
+        '''
+        滚动到顶部
+        :return:
+        '''
+        js = 'window.scrollTo(0,0)'
+        self.do_js(js)
+
+    def scroll_end(self):
+        '''
+        滚动到底部
+        :return:
+        '''
+        js = 'window.scrollTo(0,document.body.scrollHeight)'
+        self.do_js(js)
+
+    def select_by_index(self, locator, index):
+        '''
+        通过索引定位下拉框的值
+        :param locator:
+        :param index:
+        :return:
+        '''
+        element = self.get_element(locator)
+        Select(element).select_by_index(index)
+
+    def select_by_value(self, locator, value):
+        '''
+        通过value定位下拉框的值
+        :param locator:
+        :param value:
+        :return:
+        '''
+        element = self.get_element(locator)
+        Select(element).select_by_value(value)
+
+
+    def select_by_value(self, locator, text):
+        '''
+        通过text定位下拉框的值
+        :param locator:
+        :param value:
+        :return:
+        '''
+        element = self.get_element(locator)
+        Select(element).select_by_visible_text(text)
+
 

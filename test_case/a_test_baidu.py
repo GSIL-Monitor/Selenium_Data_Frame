@@ -15,7 +15,6 @@ class BaiduTest(unittest.TestCase):
     base_path = os.path.dirname(os.path.realpath(__file__)).split('\\test_case')[0]
     # 如果是处于根目录下的第一层级目录调用本类，则使用这个
     # base_path = os.path.dirname(os.getcwd()).split('\\test_case')[0]
-
     time = time.strftime('%m.%d', time.localtime())
     log_path = os.path.join(base_path, 'log', '%s.log' % (time))
 
@@ -31,21 +30,18 @@ class BaiduTest(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.driver = webdriver.Chrome()
-        cls.url = 'http://www.baidu.com'
         cls.page = Baidu_Page(cls.driver)
-        cls.search_ele = (By.ID, 'kw')
-        cls.button_ele = (By.ID, 'su')
         cls.log = OperationLog(log_path, logging.WARN)
 
     @BeautifulReport.add_test_img('test_baidu_one')
     def test_baidu_one(self):
         '''
-        纯数字搜索；sleep再判断
+        纯数字搜索
         '''
         content = '123'
-        self.page.open(self.url)
-        self.page.search(self.search_ele, content)
-        self.page.click(self.button_ele)
+        self.page.open()
+        self.page.search(content)
+        self.page.click()
         try:
             self.page.is_success(content)
         except AssertionError:
@@ -56,12 +52,12 @@ class BaiduTest(unittest.TestCase):
     @BeautifulReport.add_test_img('test_baidu_two')
     def test_baidu_two(self):
         '''
-        纯中文搜索，不sleep判断
+        纯中文搜索
         '''
         content = '海贼王'
-        self.page.open(self.url)
-        self.page.search(self.search_ele, content)
-        self.page.click(self.button_ele)
+        self.page.open()
+        self.page.search(content)
+        self.page.click()
         try:
             self.page.is_success(content)
         except AssertionError:

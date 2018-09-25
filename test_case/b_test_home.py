@@ -56,11 +56,6 @@ class HomeTest(unittest.TestCase):
         cls.driver = webdriver.Chrome()
         # 注意要初始化HomePage对象
         cls.homepage = HomePage(cls.driver)
-        cls.home_url = 'http://antgoculture.com/index'
-        cls.search_input = (By.CSS_SELECTOR, '.input')
-        cls.search_button = (By.CSS_SELECTOR, '.search')
-        cls.register = (By.CSS_SELECTOR, 'div.text > a:nth-child(1)')
-        cls.login = (By.CSS_SELECTOR, 'div.text > a:nth-child(2)')
         cls.log = OperationLog(log_path, log_level=logging.WARN)
 
     # BeautifulReport的装饰器，失败截图、保存、添加到报告中；图片名称需和方法名一致
@@ -70,9 +65,9 @@ class HomeTest(unittest.TestCase):
          纯数字搜索
         '''
         search_content = '1'
-        self.homepage.open(self.home_url)
-        self.homepage.search_content(self.search_input, search_content)
-        self.homepage.do_search(self.search_button)
+        self.homepage.open()
+        self.homepage.search_content(search_content)
+        self.homepage.do_search()
         # 这里延迟1s进行判断，因为从首页进来搜索时，title的更新会慢一点
         # time.sleep(1)
         try:
@@ -89,9 +84,9 @@ class HomeTest(unittest.TestCase):
         纯英文搜索
         '''
         search_content = 'one'
-        self.homepage.open(self.home_url)
-        self.homepage.search_content(self.search_input, search_content)
-        self.homepage.do_search(self.search_button)
+        self.homepage.open()
+        self.homepage.search_content(search_content)
+        self.homepage.do_search()
         try:
             self.homepage.is_success(search_content)
         except AssertionError:
@@ -104,9 +99,9 @@ class HomeTest(unittest.TestCase):
         纯中文搜索
         '''
         search_content = '中国'
-        self.homepage.open(self.home_url)
-        self.homepage.search_content(self.search_input, search_content)
-        self.homepage.do_search(self.search_button)
+        self.homepage.open()
+        self.homepage.search_content(search_content)
+        self.homepage.do_search()
         try:
             self.homepage.is_success(search_content)
         except AssertionError:
