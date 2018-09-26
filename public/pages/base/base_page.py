@@ -51,6 +51,14 @@ class BasicPage():
         except:
             print('使用%s定位的%s元素定位失败'%(locator[0], locator[1]))
 
+    def get_element_by_css(self, css):
+        try:
+            WebDriverWait(self.driver, 10).until(lambda x: x.find_element_by_css_selector(css))
+            return self.driver.find_element_by_css_selector(css)
+        except:
+            print('css定位失败，css语句是：%s'%(css))
+
+
     def do_js(self, js):
         '''
         执行js
@@ -78,7 +86,6 @@ class BasicPage():
         @param pagetitile: 需判断的字段
         @return: True/False
         '''
-        # return self.assertIn(pagetitle, self.driver.title)
         return WebDriverWait(self.driver, 10).until(EC.title_contains(pagetitle))
 
     def is_current_url(self, current_url):

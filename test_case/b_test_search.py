@@ -18,8 +18,7 @@ __author__ = 'LZL'
 from public.common.operation_log import OperationLog
 import logging
 from BeautifulReport import BeautifulReport
-from public.pages.home_page import HomePage
-from selenium.webdriver.common.by import By
+from public.pages.yz_pages.home_page import HomePage
 from selenium import webdriver
 import unittest
 import os
@@ -38,7 +37,7 @@ class HomeTest(unittest.TestCase):
 
     time = time.strftime('%m.%d', time.localtime())
     log_path = os.path.join(base_path, 'log', '%s.log'%(time))
-
+    OperationLog(log_path, log_level=logging.WARN)
 
 
 
@@ -56,7 +55,7 @@ class HomeTest(unittest.TestCase):
         cls.driver = webdriver.Chrome()
         # 注意要初始化HomePage对象
         cls.homepage = HomePage(cls.driver)
-        cls.log = OperationLog(log_path, log_level=logging.WARN)
+
 
     # BeautifulReport的装饰器，失败截图、保存、添加到报告中；图片名称需和方法名一致
     @BeautifulReport.add_test_img('test_1')
@@ -68,13 +67,11 @@ class HomeTest(unittest.TestCase):
         self.homepage.open()
         self.homepage.search_content(search_content)
         self.homepage.do_search()
-        # 这里延迟1s进行判断，因为从首页进来搜索时，title的更新会慢一点
-        # time.sleep(1)
         try:
-            self.homepage.is_success(search_content)
+            self.homepage.is_success()
         except AssertionError:
             logging.warning('纯数字搜索，结果对比错误')
-            # 记得要触发该异常，否则就算case失败了，也会pass
+            # 记得要抛出该异常，否则就算case失败了，也会pass
             raise AssertionError
             # raise后面的代码不会执行了
 
@@ -88,7 +85,7 @@ class HomeTest(unittest.TestCase):
         self.homepage.search_content(search_content)
         self.homepage.do_search()
         try:
-            self.homepage.is_success(search_content)
+            self.homepage.is_success()
         except AssertionError:
             logging.warning('纯英文搜索，结果对比错误')
             raise AssertionError
@@ -103,7 +100,7 @@ class HomeTest(unittest.TestCase):
         self.homepage.search_content(search_content)
         self.homepage.do_search()
         try:
-            self.homepage.is_success(search_content)
+            self.homepage.is_success()
         except AssertionError:
             logging.warning('纯中文搜索，结果对比错误')
             raise AssertionError

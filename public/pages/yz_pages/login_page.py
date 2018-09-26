@@ -15,3 +15,13 @@ __author__ = 'LZL'
                   ┃┫┫  ┃┫┫
                   ┗┻┛  ┗┻┛
 """
+
+
+from public.pages.base.base_page import BasicPage
+
+class LoginPage(BasicPage):
+
+
+
+    def phone_send_key(self):
+

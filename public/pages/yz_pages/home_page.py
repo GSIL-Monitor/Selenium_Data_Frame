@@ -29,6 +29,8 @@ class HomePage(BasicPage):
     search_button = (By.CSS_SELECTOR, '.search')
     register = (By.CSS_SELECTOR, 'div.text > a:nth-child(1)')
     login = (By.CSS_SELECTOR, 'div.text > a:nth-child(2)')
+    pagetitle = '新蚁族'
+
 
     def open(self):
         '''
@@ -71,13 +73,13 @@ class HomePage(BasicPage):
         '''
         self.get_element(self.login).click()
 
-    def is_success(self, pagetitle):
+    def is_success(self):
         '''
         根据页面的title判断是否处于当前页面，调用父类方法
         :param pagetitle: 判断关键字，包含
         :return:True/False
         '''
-        return self.is_page_title(pagetitle)
+        return self.is_page_title(self.pagetitle)
 
 
 
