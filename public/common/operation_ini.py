@@ -17,7 +17,6 @@ __author__ = 'LZL'
 """
 
 from configparser import ConfigParser
-import os
 
 class OperationIni(object):
     ''' 读取ini文件内容 '''

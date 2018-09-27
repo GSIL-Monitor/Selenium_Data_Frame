@@ -20,6 +20,7 @@ __mtime__ = '2018/8/8'
 from BeautifulReport import BeautifulReport
 from public.common.operation_mail import SendMail
 from public.common.operation_ini import OperationIni
+from public.util.util_ini import UtilIni
 import unittest
 import os
 import time
@@ -69,16 +70,14 @@ class Run(object):
 
 if __name__ == '__main__':
 
-    # 项目路径
-    base_path = os.path.dirname(os.path.realpath(__file__))
     # 测试报告名称
     time = time.strftime('%m.%d', time.localtime())
     report_name = ''.join([time, '执行的测试报告'])
 
     # 读取ini文件中的路径值
-    ini_path = os.path.join(base_path, 'config', 'path.ini')
-    ini = OperationIni(ini_path)
-    test_path = ini.get_value('path', 'test_path')
-    report_path = ini.get_value('path', 'report_path')
+    ini = UtilIni()
+    test_path = ini.get_case_path()
+    report_path = ini.get_report_path()
+
     run = Run()
-    run.begin_run(test_path=test_path, report_path=report_path, report_name=report_name, py_rule='*_test*.py')
+    run.begin_run(test_path=test_path, report_path=report_path, report_name=report_name, py_rule='e_test*.py')

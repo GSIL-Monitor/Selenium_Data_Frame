@@ -20,15 +20,27 @@ from selenium.webdriver import ActionChains
 from selenium.webdriver.support.select import Select
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from public.util.util_ini import UtilIni
+import logging
+import json
+import operator as op
 
 class BasicPage():
     ''' 所有页面的基类 '''
 
+    ini = UtilIni()
+    ini.get_OperationLog()
+
     def __init__(self, driver):
         '''
-        获得deriver，
+        获得deriver
         '''
-        self.driver = driver
+        try:
+            self.driver = driver
+        except:
+            logging.warning('获取driver失败' )
+            print('获取driver失败')
+            raise Exception
 
     def open_url(self, url):
         '''
@@ -36,8 +48,13 @@ class BasicPage():
         :param url: 指定url
         :return:
         '''
-        self.driver.get(url)
-        self.driver.maximize_window()
+        try:
+            self.driver.get(url)
+            self.driver.maximize_window()
+        except:
+            logging.warning('打开%s失败'%(url))
+            print('打开%s失败'%(url))
+            raise Exception
 
     def get_element(self, locator):
         '''
@@ -49,15 +66,27 @@ class BasicPage():
             WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(locator))
             return self.driver.find_element(locator[0], locator[1])
         except:
+            logging.warning('使用%s定位的%s元素定位失败'%(locator[0], locator[1]))
             print('使用%s定位的%s元素定位失败'%(locator[0], locator[1]))
+            raise Exception
 
     def get_element_by_css(self, css):
         try:
             WebDriverWait(self.driver, 10).until(lambda x: x.find_element_by_css_selector(css))
             return self.driver.find_element_by_css_selector(css)
         except:
+            logging.warning('css定位失败，css语句是：%s'%(css))
             print('css定位失败，css语句是：%s'%(css))
+            raise Exception
 
+    def get_elements(self, locator, index):
+        try:
+            WebDriverWait(self.driver, 10).until(lambda x: x.find_elements(locator[0], locator[1])[index])
+            return self.driver.find_elements(locator[0], locator[1])[index]
+        except:
+            logging.warning('使用%s定位的%s中的第%s个元素定位失败' % (locator[0], locator[1], index))
+            print('使用%s定位的%s中的第%s个元素定位失败' % (locator[0], locator[1], index))
+            raise Exception
 
     def do_js(self, js):
         '''
@@ -65,7 +94,12 @@ class BasicPage():
         :param js: 要执行的js
         :return: null
         '''
-        self.driver.execute_script(js)
+        try:
+            self.driver.execute_script(js)
+        except:
+            logging.warning('使用js语句定位失败：%s' % (js))
+            print('使用js语句定位失败：%s' % (js))
+
 
     def input_content(self, locator, content, is_clear=True):
         '''
@@ -88,13 +122,14 @@ class BasicPage():
         '''
         return WebDriverWait(self.driver, 10).until(EC.title_contains(pagetitle))
 
+
     def is_current_url(self, current_url):
         '''
               判断url是否包含某字段
               @param current_url: 需判断的url字段
               @return: True/False
         '''
-        return self.assertIn(current_url, self.driver.current_url)
+        return op.contains(current_url, self.driver.current_url)
 
 
     def is_visibility(self, locator):
@@ -115,6 +150,7 @@ class BasicPage():
         element = self.get_element(locator)
         ActionChains(self.driver).move_to_element(element).perform()
 
+
     def forward(self):
         '''
         前进一页
@@ -122,12 +158,14 @@ class BasicPage():
         '''
         self.driver.forward()
 
+
     def back(self):
         '''
         后退一页
         :return:None
         '''
         self.driver.back()
+
 
     def open_at_current(self, locator, js):
         '''
@@ -139,6 +177,7 @@ class BasicPage():
         self.do_js(js)
         self.get_element(locator).click()
 
+
     def get_attribute(self, locator, ab_name):
         '''
         获取元素的属性
@@ -149,6 +188,7 @@ class BasicPage():
         element = self.get_element(locator)
         return element.get_attribute(ab_name)
 
+
     def focus_to_element(self, locator):
         '''
         聚焦到元素位置（跳到）
@@ -158,6 +198,7 @@ class BasicPage():
         element = self.get_element(locator)
         self.driver.execute_script("arguments[0].scrollIntoView();", element)
 
+
     def scroll_top(self):
         '''
         滚动到顶部
@@ -166,6 +207,7 @@ class BasicPage():
         js = 'window.scrollTo(0,0)'
         self.do_js(js)
 
+
     def scroll_end(self):
         '''
         滚动到底部
@@ -173,6 +215,7 @@ class BasicPage():
         '''
         js = 'window.scrollTo(0,document.body.scrollHeight)'
         self.do_js(js)
+
 
     def select_by_index(self, locator, index):
         '''
@@ -183,6 +226,7 @@ class BasicPage():
         '''
         element = self.get_element(locator)
         Select(element).select_by_index(index)
+
 
     def select_by_value(self, locator, value):
         '''
@@ -195,7 +239,7 @@ class BasicPage():
         Select(element).select_by_value(value)
 
 
-    def select_by_value(self, locator, text):
+    def select_by_text(self, locator, text):
         '''
         通过text定位下拉框的值
         :param locator:
@@ -205,4 +249,26 @@ class BasicPage():
         element = self.get_element(locator)
         Select(element).select_by_visible_text(text)
 
+    def save_cookies(self):
+        cookies_list = self.driver.get_cookies()
+        cookie_path = self.ini.get_cookie_path()
+        with open(cookie_path, 'w', encoding='utf-8') as f:
+            json.dump(cookies_list, f)
+
+    def add_cookies(self):
+        cookie_path = self.ini.get_cookie_path()
+        with open(cookie_path) as f:
+            cookies_list = json.load(f)
+            self.driver.delete_all_cookies()
+            for cookie in cookies_list:
+                self.driver.add_cookie(
+                {
+                    'domain': '.xxxx.com',  # 此处xxx.com前，需要带点
+                    'name': cookie['name'],
+                    'value': cookie['value'],
+                    'path': '/',
+                    'expires': None
+                }
+                )
+            print(self.driver.get_cookies())
 

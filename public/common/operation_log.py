@@ -24,7 +24,7 @@ class OperationLog(object):
     对日志文件的操作类（生成的html测试报告中有错误记录和截图，所以不调用该类了）
     '''
 
-    def __init__(self, log_path, log_level=logging.ERROR):
+    def __init__(self, log_path, log_level=logging.WARNING):
         '''
         获得指定log文件对象以及设置该log文件的内容组成
         :param log_path: log文件路径

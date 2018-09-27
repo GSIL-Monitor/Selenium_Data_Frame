@@ -15,30 +15,18 @@ __author__ = 'LZL'
                   ┃┫┫  ┃┫┫
                   ┗┻┛  ┗┻┛
 """
-from public.common.operation_log import OperationLog
-import logging
+from public.util.util_ini import UtilIni
 from BeautifulReport import BeautifulReport
 from public.pages.yz_pages.home_page import HomePage
 from selenium import webdriver
+import logging
 import unittest
 import os
-import time
 
-class SearchTest(unittest.TestCase):
+class IndexTest(unittest.TestCase):
     '''
         搜索的测试用例
     '''
-
-    global log_path
-    # 如果是处于根目录下的py文件调用本类，则使用这个
-    base_path = os.path.dirname(os.path.realpath(__file__)).split('\\test_case')[0]
-    # 如果是处于根目录下的第一层级目录调用本类，则使用这个
-    # base_path = os.path.dirname(os.getcwd()).split('\\test_case')[0]
-
-    time = time.strftime('%m.%d', time.localtime())
-    log_path = os.path.join(base_path, 'log', '%s.log'%(time))
-    OperationLog(log_path, log_level=logging.WARN)
-
 
     def save_img(self, img_name):
         """
@@ -53,17 +41,22 @@ class SearchTest(unittest.TestCase):
     def setUpClass(cls):
         cls.driver = webdriver.Chrome()
         cls.homepage = HomePage(cls.driver)
+        UtilIni().get_OperationLog()
 
     @classmethod
     def tearDownClass(cls):
         cls.driver.quit()
 
-
     @BeautifulReport.add_test_img('test_to_index')
     def test_to_index(self):
+        '''
+        用例：进入首页
+        :return:
+        '''
         self.homepage.open()
         try:
             self.homepage.is_success()
+            logging.warning('进入首页')
         except AssertionError:
             logging.warning('进入首页失败')
             raise AssertionError

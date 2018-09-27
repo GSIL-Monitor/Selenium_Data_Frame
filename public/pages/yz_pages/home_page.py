@@ -17,6 +17,8 @@ __author__ = 'LZL'
 """
 
 from public.pages.base.base_page import BasicPage
+from public.util.util_ini import UtilIni
+import logging
 from selenium.webdriver.common.by import By
 
 class HomePage(BasicPage):
@@ -24,12 +26,13 @@ class HomePage(BasicPage):
     首页，继承BasicPage类
     '''
 
+    UtilIni().get_OperationLog()
     home_url = 'http://antgoculture.com/index'
     search_input = (By.CSS_SELECTOR, '.input')
     search_button = (By.CSS_SELECTOR, '.search')
-    register = (By.CSS_SELECTOR, 'div.text > a:nth-child(1)')
-    login = (By.CSS_SELECTOR, 'div.text > a:nth-child(2)')
-    pagetitle = '新蚁族'
+    register = (By.CSS_SELECTOR, 'div.text > a:nth-child(2)')
+    login = (By.CSS_SELECTOR, 'div.text > a:nth-child(1)')
+    page_title = '新蚁族'
 
 
     def open(self):
@@ -43,7 +46,6 @@ class HomePage(BasicPage):
     def search_content(self, search_content):
         '''
         定位搜索输入框并输入值
-        :param search_input: 元组(By.xxx,输入框元素路径)
         :param search_content: 搜索内容
         :return: null
         '''
@@ -52,7 +54,6 @@ class HomePage(BasicPage):
     def do_search(self):
         '''
         定位搜索按键并点击
-        :param search_button: 元组(By.xxx,搜索按键元素路径)
         :return: null
         '''
         self.get_element(self.search_button).click()
@@ -60,26 +61,27 @@ class HomePage(BasicPage):
     def to_register(self):
         '''
         定位注册并点击跳转
-        :param register: 元组(By.xxx,注册按键元素路径)
         :return:
         '''
         self.get_element(self.register).click()
 
-    def to_login(self,):
+    def to_login(self):
         '''
-        定位注册并点击跳转
-        :param login: 元组(By.xxx,注册按键元素路径)
+        定位登录并点击跳转
         :return:
         '''
-        self.get_element(self.login).click()
+        try:
+            self.get_element(self.login).click()
+        except:
+            logging.warning('首页登录按键点击失败')
+            print('首页登录按键点击失败')
 
     def is_success(self):
         '''
         根据页面的title判断是否处于当前页面，调用父类方法
-        :param pagetitle: 判断关键字，包含
         :return:True/False
         '''
-        return self.is_page_title(self.pagetitle)
+        return self.is_page_title(self.page_title)
 
 
 

@@ -16,20 +16,21 @@ __author__ = 'LZL'
                   ┗┻┛  ┗┻┛
 """
 
+
+from public.util.util_ini import UtilIni
 from BeautifulReport import BeautifulReport
 from public.pages.yz_pages.home_page import HomePage
+from public.pages.yz_pages.micro_page import MicroPage
 from public.pages.yz_pages.login_page import LoginPage
 from selenium import webdriver
 import unittest
 import os
 
+class MicroTest(unittest.TestCase):
 
-
-class LoginTest(unittest.TestCase):
     '''
-        搜索的测试用例
+    用例：购买/学习微课程
     '''
-
 
     phone = '13710781009'
     password = 'qwe123'
@@ -48,24 +49,29 @@ class LoginTest(unittest.TestCase):
         cls.driver = webdriver.Chrome()
         cls.home_page = HomePage(cls.driver)
         cls.login_page = LoginPage(cls.driver)
+        cls.mirco_page = MicroPage(cls.driver)
+        UtilIni().get_OperationLog()
 
     @classmethod
-    def tearDown(cls):
-        cls.driver.quit()
+    def tearDownClass(cls):
+        # cls.driver.quit()
+        pass
 
-    @BeautifulReport.add_test_img("test_login")
-    def test_login(self):
-        '''
-        用例：登录
-        '''
-        self.home_page.open()  # 进入首页
-        self.home_page.to_login()  # 点击登录
+    @BeautifulReport.add_test_img("test_micro")
+    def test_micro(self):
+        # 登录
+        self.home_page.open()
+        self.home_page.to_login()
         self.login_page.phone_value(self.phone)
         self.login_page.password_value(self.password)
         self.login_page.login_click()
-        name_text = self.login_page.get_name_text()
-        try:
-            self.assertEqual(name_text, name_text)
-        except:
-            print('用户名不正确，当前用户名是:%s' %(name_text))
-            raise AssertionError
+
+        self.mirco_page.to_micro()  # 点击微课程
+        self.mirco_page.click_free()  # 点击免费筛选
+        self.mirco_page.to_detail()  # 进入最后的一个课程详情页
+
+
+
+
+
+
