@@ -16,38 +16,47 @@ __author__ = 'LZL'
                   ┗┻┛  ┗┻┛
 """
 
-
 from public.pages.base.base_page import BasicPage
 from public.util.util_ini import UtilIni
+from selenium.webdriver.common.keys import Keys
+from selenium.common.exceptions import StaleElementReferenceException
+import time
+
 
 class MicroPage(BasicPage):
-
     UtilIni().get_OperationLog()
-    micro_css = 'html body div#app div header.header_box div.header.clear nav.fl ul.header_menu.clear li a'
-    free_css = 'html body div#app div section.inClass_con_box div.con ul.inClass_option_con li.clear ul.list.fr.clear li a'
-    class_locator = ('class name', 'clear')
-    class_index = -1
+    micro_css = '.header_menu > li:nth-child(2) > a:nth-child(1)'
+    free_css = 'li.clear:nth-child(2) > ul:nth-child(2) > li:nth-child(2) > a:nth-child(1)'
+    free_class_css = 'li.clear:nth-child(2) > ul:nth-child(2) > li:nth-child(2)'
+    class_css = '.class_list_box > ul:nth-child(1) > li:nth-child(1) > a:nth-child(1)'
     money_css = '.money > span:nth-child(1)'
     study_locator = ('class name', 'btn')
     current_url = 'video'
 
     def to_micro(self):
-        self.get_element_by_css(self.micro_css).click()
+        try:
+            self.get_element_by_css(self.micro_css).click()
+        except:  # 这个步骤会出现这个错误，刷新重新定位
+            self.get_element_by_css(self.micro_css).click()
 
     def click_free(self):
+        time.sleep(2)
         self.get_element_by_css(self.free_css).click()
 
     def to_detail(self):
-        return self.get_elements(self.class_locator, self.class_index).click()
+        time.sleep(2)  #　使用了显示等待，但是还是会出错，没办法只能这样了
+        return self.get_element_by_css(self.class_css).click()
 
     def get_money_value(self):
-        return self.get_element_by_css(self.money_css)
+        time.sleep(2)  #　使用了显示等待，但是还是会出错，没办法只能这样了
+        return self.get_element_by_css(self.money_css).text
 
     def click_study(self):
         self.get_element(self.study_locator).click()
 
     def get_btn_text(self):
-        self.get_element(self.study_locator).text
+        return self.get_element(self.study_locator).text
 
     def in_video(self):
-        self.is_current_url(self.current_url)
+        time.sleep(2)  #　这里用不了显示等待，只能这样了。。
+        return self.is_current_url(self.current_url)

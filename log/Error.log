@@ -1,1 +1,11 @@
-2018:09:27 17:42:23 base_page.py[line:78] WARNING css定位失败，css语句是：html body div#app div header.header_box div.header.clear nav.fl ul.header_menu.clear li a
+2018:09:28 15:09:52 base_page.py[line:77] WARNING css定位失败，css语句是：.money > span:nth-child(1)
+2018:09:28 15:12:24 base_page.py[line:77] WARNING css定位失败，css语句是：.header_menu > li:nth-child(2) > a:nth-child(1)
+2018:09:28 15:13:26 a_test_index.py[line:59] WARNING 进入首页
+2018:09:28 15:15:33 a_test_index.py[line:59] WARNING 进入首页
+2018:09:28 15:18:52 a_test_index.py[line:59] WARNING 进入首页
+2018:09:28 15:22:57 a_test_index.py[line:59] WARNING 进入首页
+2018:09:28 15:40:57 a_test_index.py[line:59] WARNING 进入首页
+2018:09:28 15:49:45 a_test_index.py[line:60] WARNING 进入首页
+2018:09:29 08:50:04 a_test_index.py[line:60] WARNING 进入首页
+2018:09:29 09:02:55 a_test_index.py[line:60] WARNING 进入首页
+2018:09:29 10:26:25 a_test_index.py[line:60] WARNING 进入首页

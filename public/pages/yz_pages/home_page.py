@@ -20,6 +20,7 @@ from public.pages.base.base_page import BasicPage
 from public.util.util_ini import UtilIni
 import logging
 from selenium.webdriver.common.by import By
+import time
 
 class HomePage(BasicPage):
     '''
@@ -32,7 +33,7 @@ class HomePage(BasicPage):
     search_button = (By.CSS_SELECTOR, '.search')
     register = (By.CSS_SELECTOR, 'div.text > a:nth-child(2)')
     login = (By.CSS_SELECTOR, 'div.text > a:nth-child(1)')
-    page_title = '新蚁族'
+    # page_title = '新蚁族'
 
 
     def open(self):
@@ -76,12 +77,12 @@ class HomePage(BasicPage):
             logging.warning('首页登录按键点击失败')
             print('首页登录按键点击失败')
 
-    def is_success(self):
+    def is_success(self, page_title):
         '''
         根据页面的title判断是否处于当前页面，调用父类方法
         :return:True/False
         '''
-        return self.is_page_title(self.page_title)
+        return self.is_page_title(page_title)
 
 
 

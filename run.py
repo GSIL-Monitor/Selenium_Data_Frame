@@ -25,11 +25,10 @@ import unittest
 import os
 import time
 
-class Run(object):
+class Run():
     '''
     执行测试类，生成测试报告并发送邮件
     '''
-
 
 
     def add_test_case(self, test_path, py_rule):
@@ -53,6 +52,7 @@ class Run(object):
         '''
         report = BeautifulReport(test_suite)
         report.report(filename=report_name, description=description, log_path=save_path)
+
 
     def begin_run(self,test_path, report_path, report_name, py_rule='test*.py'):
         '''
@@ -80,4 +80,5 @@ if __name__ == '__main__':
     report_path = ini.get_report_path()
 
     run = Run()
-    run.begin_run(test_path=test_path, report_path=report_path, report_name=report_name, py_rule='e_test*.py')
+    run.begin_run(test_path=test_path, report_path=report_path, report_name=report_name, py_rule='*_test*.py')
+

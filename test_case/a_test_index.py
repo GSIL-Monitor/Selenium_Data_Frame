@@ -53,9 +53,10 @@ class IndexTest(unittest.TestCase):
         用例：进入首页
         :return:
         '''
+        search_content = '新蚁族'
         self.homepage.open()
         try:
-            self.homepage.is_success()
+            self.homepage.is_success(search_content)
             logging.warning('进入首页')
         except AssertionError:
             logging.warning('进入首页失败')

@@ -23,7 +23,6 @@ from selenium.webdriver.support import expected_conditions as EC
 from public.util.util_ini import UtilIni
 import logging
 import json
-import operator as op
 
 class BasicPage():
     ''' 所有页面的基类 '''
@@ -72,7 +71,7 @@ class BasicPage():
 
     def get_element_by_css(self, css):
         try:
-            WebDriverWait(self.driver, 10).until(lambda x: x.find_element_by_css_selector(css))
+            WebDriverWait(self.driver, 10).until(lambda x: x.find_element_by_css_selector(css).is_displayed())
             return self.driver.find_element_by_css_selector(css)
         except:
             logging.warning('css定位失败，css语句是：%s'%(css))
@@ -81,21 +80,21 @@ class BasicPage():
 
     def get_elements(self, locator, index):
         try:
-            WebDriverWait(self.driver, 10).until(lambda x: x.find_elements(locator[0], locator[1])[index])
+            WebDriverWait(self.driver, 10).until(lambda x: x.find_elements(locator[0], locator[1])[index].is_displayed())
             return self.driver.find_elements(locator[0], locator[1])[index]
         except:
             logging.warning('使用%s定位的%s中的第%s个元素定位失败' % (locator[0], locator[1], index))
             print('使用%s定位的%s中的第%s个元素定位失败' % (locator[0], locator[1], index))
             raise Exception
 
-    def do_js(self, js):
+    def do_js(self, js, element=None):
         '''
         执行js
         :param js: 要执行的js
         :return: null
         '''
         try:
-            self.driver.execute_script(js)
+            return self.driver.execute_script(js, element)
         except:
             logging.warning('使用js语句定位失败：%s' % (js))
             print('使用js语句定位失败：%s' % (js))
@@ -129,7 +128,7 @@ class BasicPage():
               @param current_url: 需判断的url字段
               @return: True/False
         '''
-        return op.contains(current_url, self.driver.current_url)
+        return current_url in self.driver.current_url
 
 
     def is_visibility(self, locator):
@@ -140,7 +139,6 @@ class BasicPage():
         '''
         return WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(locator))
 
-
     def move_to_element(self, locator):
         '''
         鼠标移动到指定的元素上方
@@ -149,7 +147,6 @@ class BasicPage():
         '''
         element = self.get_element(locator)
         ActionChains(self.driver).move_to_element(element).perform()
-
 
     def forward(self):
         '''
@@ -178,7 +175,7 @@ class BasicPage():
         self.get_element(locator).click()
 
 
-    def get_attribute(self, locator, ab_name):
+    def get_ele_attribute(self, locator, ab_name):
         '''
         获取元素的属性
         :param locator:
@@ -270,5 +267,3 @@ class BasicPage():
                     'expires': None
                 }
                 )
-            print(self.driver.get_cookies())
-

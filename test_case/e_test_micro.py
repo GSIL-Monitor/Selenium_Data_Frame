@@ -32,8 +32,7 @@ class MicroTest(unittest.TestCase):
     用例：购买/学习微课程
     '''
 
-    phone = '13710781009'
-    password = 'qwe123'
+
 
     def save_img(self, img_name):
         """
@@ -49,29 +48,37 @@ class MicroTest(unittest.TestCase):
         cls.driver = webdriver.Chrome()
         cls.home_page = HomePage(cls.driver)
         cls.login_page = LoginPage(cls.driver)
-        cls.mirco_page = MicroPage(cls.driver)
+        cls.micro_page = MicroPage(cls.driver)
         UtilIni().get_OperationLog()
 
     @classmethod
     def tearDownClass(cls):
-        # cls.driver.quit()
-        pass
+        cls.driver.quit()
 
     @BeautifulReport.add_test_img("test_micro")
     def test_micro(self):
+        '''
+        用例：免费课程学习
+        :return:
+        '''
         # 登录
         self.home_page.open()
         self.home_page.to_login()
-        self.login_page.phone_value(self.phone)
-        self.login_page.password_value(self.password)
+        self.login_page.phone_value()
+        self.login_page.password_value()
         self.login_page.login_click()
 
-        self.mirco_page.to_micro()  # 点击微课程
-        self.mirco_page.click_free()  # 点击免费筛选
-        self.mirco_page.to_detail()  # 进入最后的一个课程详情页
+        self.micro_page.to_micro()  # 点击微课程
+        self.micro_page.click_free()  # 点击免费筛选
+        self.micro_page.to_detail()  # 进入第一个课程详情页
+        money = self.micro_page.get_money_value()
+        print('money =>', money)
+        self.assertEqual("免费", money)  # 判断进入的课程是否是免费课程
 
-
-
-
-
-
+        btn_text = self.micro_page.get_btn_text()  # 获取该课程的按钮的文本
+        if btn_text == '立即购买':  # 进行购买
+            self.micro_page.click_study()
+            self.assertEqual(self.micro_page.get_btn_text(), "立即学习")  # 文本会改变
+        else:
+            self.micro_page.click_study()  # 点击进入学习
+            self.assertTrue(self.micro_page.in_video())  # url包含video

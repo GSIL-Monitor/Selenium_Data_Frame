@@ -54,7 +54,7 @@ class SearchTest(unittest.TestCase):
         self.homepage.search_content(search_content)
         self.homepage.do_search()
         try:
-            self.homepage.is_success()
+            self.homepage.is_success(search_content)
         except AssertionError:
             logging.warning('纯数字搜索，结果对比错误')
             raise AssertionError
@@ -70,7 +70,7 @@ class SearchTest(unittest.TestCase):
         self.homepage.search_content(search_content)
         self.homepage.do_search()
         try:
-            self.homepage.is_success()
+            self.homepage.is_success(search_content)
         except AssertionError:
             logging.warning('纯英文搜索，结果对比错误')
             raise AssertionError
@@ -85,7 +85,7 @@ class SearchTest(unittest.TestCase):
         self.homepage.search_content(search_content)
         self.homepage.do_search()
         try:
-            self.homepage.is_success()
+            self.homepage.is_success(search_content)
         except AssertionError:
             logging.warning('纯中文搜索，结果对比错误')
             raise AssertionError

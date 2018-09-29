@@ -31,9 +31,6 @@ class LoginTest(unittest.TestCase):
     '''
 
 
-    phone = '13710781009'
-    password = 'qwe123'
-
     def save_img(self, img_name):
         """
         ## 为了让BeautifulReport进行自动的失败截图，必须在测试类定义该save_img方法
@@ -60,8 +57,8 @@ class LoginTest(unittest.TestCase):
         '''
         self.home_page.open()  # 进入首页
         self.home_page.to_login()  # 点击登录
-        self.login_page.phone_value(self.phone)
-        self.login_page.password_value(self.password)
+        self.login_page.phone_value()
+        self.login_page.password_value()
         self.login_page.login_click()
         name_text = self.login_page.get_name_text()
         try:
